@@ -1,4 +1,110 @@
 Dapp with autonomous smart contracts and oracles [v6]
 
 Stop Loss
+	notes: important to pause the smart contracts, because of bugs
+	
+	Pausing a Smart Contract
+		operational status implementation
+			Boolean variable: operational
+			Function modifier with require(): requirelsOPeration()
+			set value: setOperationgStatus()
+			Change status: requirelsOPeration()
+	
+		lockout bug: care, Data state of contract prevents access
+	
+	Multi-party Consensus
+		"multisig": support multi signature account
+			"M-of-N" account 
+				N = Number of private keys
+				M = Number of required keys for transaction
+				
+			+ pros: 
+				prevents theft by individual bad actors
+				protect against loss of private key
+				enforces business rules for financial transactions
+				
+			Algorithm: 
+				Define M (# of keys required)
+				Define N (# of private keys) 
+				Initialize "counter" for M on first call of function 
+				
+			notes: 
+				~ is a inherent feature of some blockchains
+				for Ethereum, it must be implemented in Smart Contract
+				design: should fail fast to avoid gas and fee
+					iteration should be? sufficiently long to hit block gas limit => lockout
+					reset to multiCalls = new address()[0]
+					
+					
 
+Receive Transfer and Send Funds:
+	ether fundamentals
+		1 ether = 1,000,000,000,000,000,000 wei
+	
+	To send funds, a Private Key is required
+		contract accounts may receive and hold funds, but cannot send funds without code 
+		externally Owned Accounts can receive, hold and send funds.
+	
+	Working With Funds
+		"payable": enable a funciton to receive funds
+		msg.value: the amount of funds received in wei
+		A fallback function is a generic way to receive funds in a contract
+		
+	Transfering Funds: 
+		funds received by a contract staty in the contract account
+		if received funds are not transferred to an External Owned Account (EOA) wiht private key, they are trapped forever in the contract account
+		ways: 
+			address.transfer() safe (throw error on failure; gas stipend 2300)
+			address.send()	somewhat safe (return false; gas stipend 2300)
+			address.call.value() is unsafe(can use all available gas) => avoid
+	
+	Sending Funds
+		possible frozen funds scenarios from sending funds in a loop due to gas limit
+		use "pull", not "push"
+		use msg.sender, not tx.rigin
+	
+	SafeMath Library: 
+		from open Zeppelin
+		overflow, underflow: cause financial loss + - * /
+		balance.add()	balance.sub()	balance.mul()	balance.div()
+	
+	
+	Payment Protection Patterns: 
+		Checks-Effects-Interaction
+			- Protects against re-entrancy attacks
+			- check if all conditions are met and arguments are in range
+			- change state variable
+			
+			e.g code: 
+				require(balance[msg.sender] > 0);
+				uint256 prev = balance[msg.sender];
+				balance[msg.sender] = 0;
+				msg.sender.transfer(prev);
+			
+		Rate Limiting
+			~ controls the frequency at which a contract operation (e.g. a function call) can occur to minimize loss such as rapid drainage of funds
+			
+		Re-entrancy Guard 
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
