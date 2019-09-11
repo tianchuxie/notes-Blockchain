@@ -1,0 +1,332 @@
+/*
+*	Supply Chain
+*/
+
+Supply Chain with Smart Contract
+	sku: match to items
+	track: 
+		Add item
+		Buy item
+		Fetch item
+		
+		
+	Smart Contract Structure:
+	
+	modifier:
+		modifier onlyOnwer() {
+			require(msg.sender == owner);
+			_;
+		}
+		
+	‘emit’ keyword in Solidity
+		recommend: emit EventName(); to call events explicitly.
+		
+		
+	code: 
+	
+	
+			pragma solidity ^0.4.24;
+
+			// Define a contract 'Lemonade Stand'
+			contract LemonadeStand {
+
+				// Variable: Owner
+				address owner;
+
+				// Variable: SKU count
+				uint skuCount;
+
+				// Event: 'State' with value 'ForSale'
+				enum State { ForSale, Sold, Shipped }
+
+				// Struct: Item. name, sku, price, state, seller, buyer
+				struct Item {
+					string  name;
+					uint  sku;
+					uint  price;
+					State  state;
+					address  seller;
+					address  buyer;
+				}
+
+				// Define a public mapping 'items' that maps the SKU (a number) to an Item.
+				mapping (uint => Item) items;
+
+				// Events
+				event ForSale(uint skuCount);
+				event Sold(uint sku);
+				event Ship(uint sku);
+
+				// Modifier: Only Owner see if msg.sender == owner of the contract
+				modifier onlyOwner() {
+					require(msg.sender == owner);
+					_;
+				}
+
+				// Define a modifier that verifies the Caller
+				modifier verifyCaller (address _address) {
+					require(msg.sender == _address);
+					_;
+				}
+
+				// Define a modifier that checks if the paid amount is sufficient to cover the price
+				modifier paidEnough(uint _price) {
+					require(msg.value >= _price);
+					_;
+				}
+
+				// Define a modifier that checks if an item.state of a sku is ForSale
+				modifier forSale(uint _sku) {
+					require(items[_sku].state == State.ForSale);
+					_;
+				}
+
+				// Define a modifier that checks if an item.state of a sku is Sold
+				modifier sold(uint _sku) {
+					require(items[_sku].state == State.Sold);
+					_;
+				}
+
+				constructor() public payable {
+					owner = msg.sender;
+					skuCount = 0;
+				}
+
+				function addItem(string _name, uint _price) onlyOwner public {
+					// Increment sku
+					skuCount = skuCount + 1;
+
+					// Emit the appropriate event
+					emit ForSale(skuCount);
+
+					// Add the new item into inventory and mark it for sale
+					items[skuCount] = Item({name: _name, sku: skuCount, price: _price, state: State.ForSale, seller: msg.sender, buyer: 0});
+				}
+
+			// Define a modifier that checks the price and refunds the remaining balance
+			modifier checkValue(uint _sku) {
+				_;
+				uint _price = items[_sku].price;
+				uint amountToRefund = msg.value - _price;
+				items[_sku].buyer.transfer(amountToRefund);
+			}
+
+			// Define a function 'buyItem' that allows one to purchase an item from the inventory
+			function buyItem(uint sku) public payable
+				// Call modifier to check if sku is for sale
+				forSale(sku)
+				// Call modifer to check if buyer has paid enough
+				paidEnough(items[sku].price)
+				// Call modifer to send any excess ether back to buyer
+				checkValue(sku) {
+				address buyer = msg.sender;
+				uint  price = items[sku].price;
+				// Update buyer
+				items[sku].buyer = buyer;
+				// Update state
+				items[sku].state = State.Sold;
+				// Transfer money to seller
+				items[sku].seller.transfer(price);
+				// emit the appropriate event
+				emit Sold(sku);
+				}
+				
+				function shipItem(uint sku)  sold(sku) verifyCaller(items[sku].seller) public{
+					items[sku].state = State.Shipped;
+					emit Ship(sku);
+				}
+
+				function fetchItem(uint _sku) public view returns (string name, uint sku, uint price, string stateIs, address seller, address buyer) {
+					uint state;
+					name = items[_sku].name;
+					sku = items[_sku].sku;
+					price = items[_sku].price;
+					state = uint(items[_sku].state);
+
+					if( state == 0) {
+						stateIs = "For Sale";
+					}
+
+					if( state == 1) {
+						stateIs = "Sold";
+					}
+
+					seller = items[_sku].seller;
+					buyer = items[_sku].buyer;
+				}
+
+			}
+			
+			
+			
+			
+Blockchain Privacy
+	BC features: -> so need privacy to filter levels
+		transparent 
+		immutable
+		permanent
+	
+	Hashing
+		def: a mathematical calculation that when applied to any data always computes an answer with the same length.
+		preimage -> Hash Value
+		cryptography hash: hard to get same hash; hard to know back
+		
+	Merkle Trees
+		8 -> 4 hash -> 2 hash -> Merkle Root		// odd just duplicate last
+		Merkle Proof: minimum number of hash
+
+	Ring Signatures, provide a list of potential signers
+		public key to share, 
+		ring algorithm: array of public key, each can sign by private key
+		code: 
+			var lrs = require('lrs'); 	// stands for linkable ring signatures
+
+			// 3 parties generate their public/private key pairs
+			var alice = lrs.gen();
+			var bob = lrs.gen();
+			var eve = lrs.gen();
+
+			// The list of public key is known and distributed
+			var group = [alice, bob, eve].map((m) => m.publicKey);
+
+			// Alice signs a message in behalf of one of the 3
+			var signed = lrs.sign(group, alice, "The body is buried on the backyard.");
+
+			// Anyone is able to verify *some* of them signed that message
+			console.log(lrs.verify(group, signed, "The body is buried on the backyard."));
+			  
+			// If that same person signs another message...
+			var signed2 = lrs.sign(group, alice, "Just kidding, he is alive.");
+
+			// We are able to tell the signature came from the same person
+			console.log(lrs.link(signed, signed2));		
+
+	Zero-Knowledge-Proof
+		def: The person you're proving to, doesn't learn anything more than the bare fact that you're proving 
+		Interactive Proof: throw enough pitches
+		Non-Interactive Proof: Proofs where the secret holder can create a proof without replying on anyone else.
+				e.g. 54 poke cards, hold red one, show all 26 black cards
+				set membership 
+		
+	ZK-SNARKs: 
+		certain a secret without reveling it 
+		A ->  Cryptographic Circuit <- B
+			generate Cryptographic Circuit: inputs Hash from A, docs from B
+			runs on B's computer, compare Hash
+		def: 	- Zero Knowledge
+				- Succint
+				- Non-Interactive
+				- Argument
+				- of Knowledge
+
+
+	Differential Privacy
+		A technique used to maximize both the usefulness of a set of data as well as the privacy of the individuals within that dataset.
+		code: 	// random noise
+			function answer(realDog) {
+				if (Math.random() < .5) {
+					// answer truthfully
+					return realDog;
+				}
+				// answer randomly
+				return Math.random() < .5;
+			}
+
+
+Smart Contract Security (valuable)
+	Well Known Attacks:
+		Parity
+		DAO
+	DAO (Decentralized Autonomous Organization)
+		code: 
+		   // VULNERABLE
+			function withdrawCoins(){
+				uint withdrawAmount = balances[msg.sender];
+				Wallet wallet = Wallet(msg.sender);
+				wallet.payout.value(withdrawAmount)();
+
+				// this line is not reached before the next recursion!!
+				balances[msg.sender] = 0;
+			}		
+			
+
+			uint recursion=20;
+			function payout() payable {
+				// exploit
+				if(recursion>0) {
+					recursion--;
+					fundraiser.withdrawAllMyCoins();
+				}
+			}			
+
+	Parity Wallet Hack:
+		 covered in a lot of detail from a PR perspective https://www.coindesk.com/30-million-ether-reported-stolen-parity-wallet-breach
+		 
+		Delegate call:
+			similar to lib, to call other contract function
+			https://solidity.readthedocs.io/en/v0.4.24/introduction-to-smart-contracts.html#delegatecall-callcode-and-libraries
+		Fallback function:
+			unnamed functions, catch-up, fall-back
+			alert 
+			https://solidity.readthedocs.io/en/v0.4.24/contracts.html#fallback-function
+		
+		Solidity Documentation
+			https://solidity.readthedocs.io/en/latest/index.html
+		Security Considerations
+			https://solidity.readthedocs.io/en/latest/security-considerations.html
+		Common Patterns
+			https://solidity.readthedocs.io/en/latest/common-patterns.html
+		Style Guide
+			https://solidity.readthedocs.io/en/latest/style-guide.html
+
+	Consensys: https://consensys.net/
+		Ethereum Smart Contract Best Practices: https://consensys.github.io/smart-contract-best-practices/
+		
+	White papers and Research Overview
+		...resources: 
+			Reentrancy
+			Tx.origin
+			Callstack depth
+			Timestamp dependence
+			Transaction-ordering dependence
+			Unchecked-send bug
+			Blockhash usage
+			Gasless send
+		
+	Open Zeppelin 
+		tested code 
+	Security Audits 
+		1. experts reviewed code 
+		Open Zeppelin, Coinfabrik, Brave (BAT: Basic Attention Token)
+		https://brave.com/
+		QuillHash
+		Bug Bounties Program: vulnerability to get points
+		
+
+Distributed File System: (DFS)
+	Interplanetary File System (IPFS) https://ipfs.io/
+	def: 
+		Internet: it's a collection of protocols or rules to decide the best way to move and share information acrss a network
+		protocols: 	HTTP
+					Distributed
+		e.g. to solve: 
+			IPFS, Swarm, Storage, SIA
+	
+	IPFS: (bitTorrent before)
+		Nodes, any type of data you like
+		Content Based Addressing: 
+			IPFS / Hash Value
+			
+		(http): location based Addressing: 
+			Folder/Folder/File => (404) moved, or removed
+			
+
+		Docs of commands: https://docs.ipfs.io/
+		every content in IPFS will have a unique Hash value
+		-r upload entire directory 
+
+	IPNS: reference to other hash, just like Blockchain
+
+
+
+	

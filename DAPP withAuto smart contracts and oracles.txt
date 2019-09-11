@@ -1,0 +1,4 @@
+Dapp with autonomous smart contracts and oracles [v6]
+
+Stop Loss
+

@@ -1,0 +1,19 @@
+npm i -g truffle@4.1.14
+
+DAPP
+	npm install -g truffle
+	truffle -v
+	truffle unbox webpack
+	
+Test
+	it('has correct name', async() => {
+		assert.equal(await instance.starName.call(), 'Awesome Udacity Star');
+		})
+	// Example test case, it will test is the Smart Contract function claimStar assigned the Star to the owner address
+	it('can be claimed', async () => {
+		let instance = await StarNotary.deployed(); // Making sure the Smart Contract is deployed and getting the instance.
+		await instance.claimStar({from: owner}); // Calling the Smart Contract function claimStar
+		let starOwner = await instance.starOwner.call(); // Getting the owner address
+		assert.equal(starOwner, owner); // Verifying if the owner address match with owner of the address
+	});
+	

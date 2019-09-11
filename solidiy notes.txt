@@ -1,0 +1,355 @@
+npm install webpack-dev-server -g
+    string public constant name = "Udacity Token";
+    string public constant symbol = "UDC";
+Meets Specifications
+Here are some more articles and links that might be useful:
+Become an ethereum freelancer https://blocklancer.net
+Chingu is a global collaboration platform and coding-cohort generator. We connect motivated learners with shared goals to learn, help and build together.https://chingu.io/
+An interesting article about a new dApp called Bloom. Check it out and take some ideas from it https://blog.hellobloom.io/a-starter-guide-to-using-the-bloom-mainnet-dapp-metamask-signing-up-77f403d13f9b
+How the EVM works? https://www.youtube.com/watch?v=OYfy1-5nB64
+Project has been completed successfully, Happy learning! stay udacious!:udacious:
+
+4400665001640091
+4400665001640091
+08/20
+091
+
+
+379279854571000
+379279854571000
+08/23
+3057
+
+
+1900 Chapman Ave 305
+Rockville, MD, 20852
+
+Solidity Notes: 
+	Memory Management:
+		memory - Used for temporary storage of data, information is lost after function execution
+		storage - Used for variables in storage, stay with the contract, and the data persists
+		callData - Like a stack. Used for EVM call execution
+	
+		default is storage
+	Type: 
+		uint
+		int
+		bool
+		address: 20-byte hex string, value type
+				address.balance
+		
+		initialization: 
+			address owner (0x0) hex 0s 
+			if (owner == address(0x0))
+	
+	Type Conversion  
+		implicit small -> big auto
+		explicit cast big -> small
+	
+	Complex Data Types
+		Arrays
+				static fixed sized
+					bool[10] array;
+					
+				dynamic can change at run time
+					bool[] array; //storage
+					
+					memory:
+						// cannot initialization in memory
+						//only works inside functions
+						int8[] memory array; 
+						arr = new int8[](10);
+						arr.push(5) // compile error, cannot push
+						uint8[] memory memoryArray
+						uint8[] memory memoryArray = [1,2,3] //compile error
+						arr.length = 6 //compile error, not allowed to change
+		
+		
+
+		Bytes
+			special array, 
+			initialization: 
+				//read only cannot assign
+				byte[15] data;
+				bytes[1-32] data;
+				bytes24 data //fixed size 24
+				data[byte(1), 2,3...]
+				data.length = 10 //not allowed
+		Strings
+			not a basic type
+			dynamically size
+			string = bytes with some difference		
+				//not supported fixed length
+				// index not allowed in string
+				// cannot push / expand
+				// cannot length 
+				
+			StringUtil lib
+			avoid string operation -> bytes
+			
+		Mapping
+			java hash table
+			In mapping, the Hash is stored as the value of the key.
+			only storage
+				key: any type except mapping
+				value: any type
+			not iterable
+					
+					mapping(string => string) captials;
+					capitals[country] = captial;
+					delete(relations[name])
+		Enums
+			not ABI def
+			Enum values can be explicitly converted to/from uint value.
+				0, 1, 2, 3, .... = unit(stateEnumType)
+					enum TransferType {Domestic, Foregin}
+					unit8 x= unit8(TransferType.Domestic)
+			
+	
+		Structs
+			not ABI def / cannot send or receive struct types
+			
+				using keyword struct
+				cannot have member of own type
+				contained in arrays
+			Local variables of type structs are created in memory.
+
+
+Solidity Global Variables and Ether Units:
+	Block:
+		.number
+		.coinbase
+		.timestamp
+		.difficulty
+		.gaslimit
+		.blockhas(unit blokNum) returns (bytes32)
+		
+	Msg:
+		.data
+		.sender		//caller's address
+		.sig
+		.value 		// number of wi
+	
+	tx:
+		.gasprice
+		.origin		// originated transaction
+	
+	Ether
+		wei (default), szabo, finney, ether
+	
+	Now				//block time in secodns (from 1970)
+		seconds (default), hours, weeks, minutes, days, years
+		
+
+Functions in Solidity	
+
+	function types:
+		public
+		private
+		view / constant
+		pure
+		payable
+	
+	Visibility Overview
+		public 
+		private
+		internal		// Internal functions can be accessed from derived contracts.    cold jumps, encoded by compiler
+		external		//call by "this" keyword, part of ABI
+		
+	Overloading
+		same name, parameters are different
+		
+	
+	Fallback Functions
+		only one, like 'catch' in try-catch
+		un-name
+		no arguments
+	
+	Constructor Function
+		accept arguments, no overloading
+		not required 
+		e.g.
+			constructor(uint value) public {
+				amount = value;
+			}		
+	Function Modifiers
+		e.g.
+		contract ModiContract{
+			address owner;
+			uint value;
+			modifier ownerOnly{
+				if (owner == msg.sender) {
+					_;
+				} else {
+					revert();
+				}
+			}
+			function onlyOwnerCall() ownerOnly public returns(bool){
+				value = 100;
+				return true;
+			}
+		}
+	
+	
+	
+		notes:
+			storage variables cannot declare as external
+			string public ownerName;		// a getter function is created automatically
+			When a function returns multiple values to an outside web3 application, the values are returned as a:
+			
+	
+	e.g.	
+		function getName() public view returns (string_name){
+			return name;
+		}
+		
+		    function  getBlockInformation() public view returns (uint number, bytes32 hash, address coinbase, uint difficulty) {
+				number = block.number; // Previous block
+				hash = blockhash(number - 1); // -1 because excluding current...same as block.blockhash()
+				// Current block
+				coinbase = block.coinbase;
+				difficulty = block.difficulty;
+			}
+		
+Error Handling
+	revert: 
+		unused gas is sent back, ether back
+	require
+		used gas is sent back
+		run before code is exectured
+		require (msg.sender == owner)
+	assert
+		all gas is back
+		internal testing 
+	return a value
+	emit event 
+	throw exception
+	
+	notes:
+		not support try-catch
+		get record
+		not ether, or send back
+		gas
+		
+Inheritance in Solidity
+	code from baseContracts is copied to derived contract
+	is ... mutimple 
+	interface interfaceContract{
+		function sendMoney (uint amount, address _address) external returns (bool);
+	}
+	
+	import ...
+	contract CreditAccount is Account{
+	}
+	
+Events in Solidity:
+	events need to be declared in a contract before they can emitted by a functions
+	Events generated by the Solidity contract are stored in all the ethereum nodes.
+	Events are part of the ABI.
+	e.g.
+		event Deposit(address from, uint value);
+		
+Tokens	
+	Token Contracts def:
+		smart contracts that contains a mapping (address => balance)
+		or other values, some kind of license
+		unit of this balance is commonly called token
+		
+		(ERC)	Ethereum Request for Comments (ERC)		// rules for tokens
+		(EIPs)  Ethereum Improvement Proposals  describe standards for the Ethereum platform, including core protocol specifications, client APIs, and contract standards.
+		
+	ERC Token Standards
+		Fungible Token
+			A Fungible Token is a token, where all tokens are exactly the same.
+				They have the same value.
+				For example, any 1 dollar bill is equal to another 1 dollar bill.
+				All the widely used ERC-20 tokens are fungible tokens.
+				
+		Non-Fungible Token
+			A Non-Fungible Token is a special type of cryptographic token which represents something unique.
+			Non-Fungible tokens are not interchangeable, because they all have a different value.
+			For example, if we represented real estate parcels in tokens, not all parcels would be equal in value, hence all these tokens will also not be equal in value.
+			ERC-721 is a non-fungible token standard.
+			The famous CryptoKitties Token is an ERC-721 non-fungible token.
+				
+			
+	ERC-20
+		fungible
+		> 90% tokens
+		all the same, standard
+		transfer tokens
+		
+		implement: 
+			-	3 optional fields
+					Name of the token
+					Symbol of the token
+					Decimals values in tokens
+			-	6 mandatory functions
+					transfer event
+					approve event
+			-	2 mandatory events
+					totalSupply ( ) function
+					balanceOf ( ) function
+					transfer ( ) function
+					transferFrom ( ) function
+					approve ( ) function
+					allowance ( ) function
+		
+	ERC-223
+		fungible
+		+ 	avoid losing tokens
+			use less gas
+		-	propsosals, not standard
+			not design to send tokens
+		ENS Ethereum Name Service
+	ERC-621
+		extension ERC-20
+			+	increaseSupply, decreaseSupply
+	ERC-827
+		latest standard, improvement to ERC-20 (only allows transfer of value)
+		allows transfer of value and data
+		
+	ERC-721
+		non-fungible
+		every token will have a different value
+		e.g. CryptoKitties
+	
+	
+		functions needed
+			ownerOf(unit256 tokenId) public view returns (address)	// return address the token from
+		
+			function _mint(address to, unit256 tokenId) internal {
+				require(to != address(0));
+				_addTokenTo(to, tokenId);
+				emit Transfer(address(0), to, tokenId);
+			
+			}
+			function _addTokenTo(address to, unit tokenId) internal{
+				require(_tokenOwner[tokenId] == address(0));
+				_tokenOwner[tokenId] = to;
+				_ownerTokensCount[to] = _ownedTokensCount[to].add(1);
+			}
+			
+			removeTokenFrom(address from, unit256 tokenId) internal
+	
+		remove
+			_tokenOwner[tokenId] = address(0);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
