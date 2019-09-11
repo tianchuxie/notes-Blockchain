@@ -83,6 +83,8 @@ Receive Transfer and Send Funds:
 			
 		Rate Limiting
 			~ controls the frequency at which a contract operation (e.g. a function call) can occur to minimize loss such as rapid drainage of funds
+			best implementation: time parameter
+				
 			
 		Re-entrancy Guard 
 		
