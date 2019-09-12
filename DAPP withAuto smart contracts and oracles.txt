@@ -1,5 +1,9 @@
 Dapp with autonomous smart contracts and oracles [v6]
 
+Notes of developments: 
+	git checkout ExerciseC6C && npm install
+
+
 Stop Loss
 	notes: important to pause the smart contracts, because of bugs
 	
@@ -29,7 +33,7 @@ Stop Loss
 				Initialize "counter" for M on first call of function 
 				
 			notes: 
-				~ is a inherent feature of some blockchains
+				~ is a inherent feature of some blockchains (bitcoin)
 				for Ethereum, it must be implemented in Smart Contract
 				design: should fail fast to avoid gas and fee
 					iteration should be? sufficiently long to hit block gas limit => lockout
@@ -38,30 +42,33 @@ Stop Loss
 					
 
 Receive Transfer and Send Funds:
-	ether fundamentals
-		1 ether = 1,000,000,000,000,000,000 wei
 	
-	To send funds, a Private Key is required
-		contract accounts may receive and hold funds, but cannot send funds without code 
-		externally Owned Accounts can receive, hold and send funds.
-	
-	Working With Funds
-		"payable": enable a funciton to receive funds
-		msg.value: the amount of funds received in wei
-		A fallback function is a generic way to receive funds in a contract
+	Knowledge of ether and payment fundamentals
+		ether fundamentals
+			1 ether = 1,000,000,000,000,000,000 wei
 		
-	Transfering Funds: 
-		funds received by a contract staty in the contract account
-		if received funds are not transferred to an External Owned Account (EOA) wiht private key, they are trapped forever in the contract account
-		ways: 
-			address.transfer() safe (throw error on failure; gas stipend 2300)
-			address.send()	somewhat safe (return false; gas stipend 2300)
-			address.call.value() is unsafe(can use all available gas) => avoid
+		To send funds, a Private Key is required
+			contract accounts may receive and hold funds, but cannot send funds without code 
+			externally Owned Accounts can receive, hold and send funds.
+		
+		Working With Funds
+			"payable": enable a funciton to receive funds
+			msg.value: the amount of funds received in wei
+			A fallback function is a generic way to receive funds in a contract
+			
+		Transfering Funds: 
+			funds received by a contract staty in the contract account
+			if received funds are not transferred to an External Owned Account (EOA) wiht private key, they are trapped forever in the contract account
+			ways: 
+				address.transfer() safe (throw error on failure; gas stipend 2300)
+				address.send()	somewhat safe (return false; gas stipend 2300)
+				address.call.value() is unsafe(can use all available gas) => avoid
+		
+		Sending Funds
+			possible frozen funds scenarios from sending funds in a loop due to gas limit
+			use "pull", not "push"
+			use msg.sender, not tx.rigin
 	
-	Sending Funds
-		possible frozen funds scenarios from sending funds in a loop due to gas limit
-		use "pull", not "push"
-		use msg.sender, not tx.rigin
 	
 	SafeMath Library: 
 		from open Zeppelin
@@ -83,19 +90,104 @@ Receive Transfer and Send Funds:
 			
 		Rate Limiting
 			~ controls the frequency at which a contract operation (e.g. a function call) can occur to minimize loss such as rapid drainage of funds
-			best implementation: time parameter
+			best implementation: time parameter (used in multiple scenarios, delay)
+			Patterns: 
+				Initialize "enable" to current time
+				Require time of call in modifier to be greater than "enable"
+			code: 
+				using SafeMath for unit256; 
+				unit256 private enabled = block.timestamp; 
+				modifier rateLimit(unit time) {
+					require (block.timestamp >= enabled, "Rate limiting in effect");
+					enabled = enabled.add(time);
+					_;
+				}
 				
+				function safeWithdraw(uint256 amount) external rateLimit (30 minutes) {
+					//Withdraw code ... not required for exercise
+				}
 			
 		Re-entrancy Guard 
+			~ prevents a contract function from calling itself multiple times in a single transaction
+			Protects against re-entrancy attacks
+			Best implementation as function modifier
+			Patterns: 
+				Initialize guard "counter"
+				Increment "counter" inside modifier
+				Set local variable to value of "counter"
+				Call function (using_placeholder)
+				Require that local variable has same value as "counter"
+				
+			Code: 
+				using SafeMath for unit256; 
+				unit256 private counter = 1; 
+				modifier entrancyGuard() {
+					counter = counter.add(1);
+					unit256 guard = counter;
+					_;
+					require(guard == counter, "That is not allowed");
+				}
+				
+				function safeWithdraw(uint256 amount) external entrancyGuard () {
+					//Withdraw code ... not required for exercise
+				}
+
 		
+	Security Best Practices
+		1	Keep functions "private" or "internal" unless they are needed outside your contract
+		2	Debit before credit to minimize the risk of re-entrancy attacks
+		3	Another contract may use "delegatecall()" to call your contract function. Be aware of this and code defensively
+		4	For time-sensitive operations, keep in mind that "now" is a synonym for "block.timestamp" and can be mainpulated by miners
+		5	Prefix all calls to external contracts with "Untrusted"
+		6	On-chain data is always public. Do not store any sensitive information.
+		7 	Do not make state changes in function modifiers. Use them only for assertions.
+		8	Keep fallback functions short and require msg.data.length equals zero
+		9	Explicitly mark visibility of functions and state variables
+		10	Does it really need to be on-chain?
 
 
 
-
-
-
-
-
+Why Contracts Should Be Upgradable
+	Upgrade Scenarios: 
+		bug
+		business rules have changed requiring the contract code to be updated
+		contract admin's private key was lost or compromised introducing the risk of financial loss or privacy getting compromised
+		gas prices has increased and code needs to be optimized to lower contract execution costs
+	
+	Solution:
+		-	Separate contract data and application logic into separate contracts; 
+			so app contract can be upgraded when necessary
+				works well for changing application logic
+				does not work if data structures needs to be changed
+		-	Migrate contract to a new contract using a client application 
+				requires moving potentially very large data stores
+				gas cost can be very high
+				need to break task into a large number of sub-tasks to avoid running into block gas limits
+		-	Separate contract data and application logic into separate contracts;
+			along with a dispatcher proxy contract
+				complex to implement and may introduce vulnerabilities (delegatecall...)
+		-	Separate contract data and application logic into separate contracts;
+			and use key/value pairs for data (e.g. Redis)
+				application logic cannot benefit from sematic data structures
+				data store works for a wide range of scenarios
+			
+			
+			
+	Separate Data and Logic
+		Data Contract <-  App Contract
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+		
 
 
 
