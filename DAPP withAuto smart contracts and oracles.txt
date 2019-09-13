@@ -1,4 +1,5 @@
 Dapp with autonomous smart contracts and oracles [v6]
+https://github.com/udacity/BCND-C6-Exercises
 
 Notes of developments: 
 	git checkout ExerciseC6C && npm install
@@ -175,9 +176,42 @@ Why Contracts Should Be Upgradable
 			
 	Separate Data and Logic
 		Data Contract <-  App Contract
+	
+	。。。。 test ....  deploy yourself on code 
+	
+Data from Oracles: 
+	Oracles 
+		Oracles: Oracles are gateways used by Smart Contracts to interact with the outside world
+			primary purpose: to securely provide off-chain data to Smart Contracts
+		smart contracts <-> oracles
+		e.g.	Flight Insurance
+				Shipping
+				Finance
+				
+		Trusted Oracles	
+			Oracles that are known to be secure, reliable and resistant to manipulation
+			typically used in private blockchain scenarios
+			centralized, single point of failure 
+			Act as a proxy for Smart Contract to access external data
+		
+	Trustless Oracles: 
+		Oracles that are unknown and may or may not be malicious
+		Oracles for public blockchains are inherently trustless
+		Many oracles ensure there isn't a single point of failure 
+		require considerable measures to minimize trust and protect from attacks
+		
+		Strategies
+			1. Multiple Data Sources
+			2. Multiple Oracles
+			3. Staking
 			
-			
-			
+	Types of Attacks		
+		1. Sybil： 		one entity that pretends to be many entities
+		2. Cartel		
+		3. Mirroring
+		4. Freeloading
+		5. Privacy
+		
 			
 			
 			
