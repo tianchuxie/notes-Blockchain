@@ -177,6 +177,27 @@ Why Contracts Should Be Upgradable
 	Separate Data and Logic
 		Data Contract <-  App Contract
 	
+	Important Practical Notes: 
+		If you see : 
+			writing artifacts to ./build/contracts, means you are doing correctly
+			and lib is not a good solutions for that, should separate two parts as data and app 
+			L4: 	in app constructor, need provide the address of the data contract
+					solutions: an authorized user can call a function and change the address
+			L5: 	Error handling: 
+						sometimes error message tend to be a little spurious
+	Security Between Contract
+		1. Data contract is assuemed to be controlling contract
+		2. Data contract uses a function modifier to check if calling contract is authorized
+			-	contract owner registers and de-registers calling contract 
+			
+	Summary: 
+		1. Understanding scenarios in which Smart Contracts need to be upgraded
+		2. Pros and cons of different solutions for handling Smart Contract upgrades
+		3. Separate Smart Contract into Data and Application contracts
+		4. Securing calls between Data and Application contracts
+		
+			
+	
 	。。。。 test ....  deploy yourself on code 
 	
 Data from Oracles: 
@@ -206,14 +227,36 @@ Data from Oracles:
 			3. Staking
 			
 	Types of Attacks		
-		1. Sybil： 		one entity that pretends to be many entities
-		2. Cartel		
+		1. Sybil： 		
+				one entity that pretends to be many entities, to influence some actions
+				e.g. lottery 
+		2. Cartel	
+				a group of people create scenarios and outcomes that favor them
+				many entities collude as one
 		3. Mirroring
+				multiple nodes/ oracles just do others do , but tip the balance, influence the outcome of things
 		4. Freeloading
+				require certain works to be done, might cost money or funds in cryptocurrency 
+				steal the output of anther Oracle and present it as their own, resulting reduce the quality of information 		
 		5. Privacy
-		
+				inverse, directly access certain data should not have
+	
+	Preventing:
+		1. Block means of communication with other oracles
+		2. Block ability to identify other oracles
+		3. Block ability to see answers submitted by other oracles
+	
+	Architecture Walkthrough
+		see graph 
+		validation on step 6, many checks before accepting response
+		one oracle represent n oracles
+		rules: 
+			threhold 
+			process, move on
+			m of n 
 			
-			
+	Notes for implementation exercise:
+		first get all the oracles, then determine which one to be trust => also can determine the lower reputation oracles by comparing the peers
 			
 			
 			
