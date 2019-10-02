@@ -257,25 +257,78 @@ Data from Oracles:
 			
 	Notes for implementation exercise:
 		first get all the oracles, then determine which one to be trust => also can determine the lower reputation oracles by comparing the peers
-			
-			
-			
-			
-			
-			
-			
+		Ramdom: you cannot get true randomness in Block chain code 
+			uint8 random = uint8(uint256(keccak256(abi.encodePacked(blockhash(block.number - nonce++), account))) % maxValue);
 		
+		Oracle Callback: any value crosses teh threshold that we have set for minimum number of responses
+			submitOracleResponse(): isOpen property
+				key = 0 using index, flight and timestamp
+		
+		
+	Storage and Events: 
+		events are key vector for triggering the Oracles and also for when Oracle's report back
+			
+			
+Dapp UX: 
+	Waiting: indeterminate amount of time, 
+		3rd party services and APIS to estimates the transaction times
+		will notify when the processing occurs
+		Takeaways: 
+			communicate to a user the amount of time a transaction will take
+			notify the user when the transaction is complete
+		
+	Impact: 
+		be very clear what will happen when a user takes an action 
+			data
+			financial transaction involved
+			
+	Cost:
+		transaction cost in the form of gas 
+			if failed, may not get their full transaction back
+			
+	Events: 
+		provide from the very beginning: 
+			indicator goes to a different view
+			make sure the events are surfaced
+			
+		double-edge sword: 
+			surface the events
+			not annoy the user
+			
+		toast mechanism to surface events
+		group them, filter them
+		
+		Solution: 
+			every event has some user priority indicator // standard values
+			
+			
+	Provenance: // use a lot in supply chain
+		user doesn't know: where the data is going and where its coming from
+		from 
+			the blockchain and if it is public
+			a database and if the data is potentially private or semi-private
+			a 3rd party oracle that you have no control over
+			
+	Address: 
+		do not show the full address in the UI
+		show the ux and the last few digits of the address
+		make sure the address is selectable
+		
+	History:
+		give the user a history of their interactions // interact notification
+		serve to act as the user's personal ledger of what they did
 
+	Context: 
+		use color and clear language to indicate context
+		clarify the state that the Dapp is in
 
+	Privacy：
+		do not directly store private user data in a Smart Contract
+		encrypt sensitive data
 
-
-
-
-
-
-
-
-
+	Affordance：
+		don't make the user think
+		
 
 
 	
