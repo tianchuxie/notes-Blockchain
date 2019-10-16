@@ -1,4 +1,8 @@
 Finally Project Dis:
+
+https://medium.com/@andresaaap/flightsurety-project-faq-udacity-blockchain-b4bd4fb03320
+
+
 Project Steps:
 	Clone the project repository
 	Explore the code base.
