@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<!-- saved from url=(0227)https://classroom.udacity.com/nanodegrees/nd1309/parts/36b45ada-c0e5-495e-b6cc-34ea14a18d61/modules/43d200d0-9ce6-4e20-b1c0-39a4e00ac275/lessons/d35b025b-01b3-4bd9-acf5-e8bb5b88f00c/concepts/a431480a-c27c-437d-a911-8d442d2c8624 -->
+<html class="gr__classroom_udacity_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style class="vjs-styles-defaults">
+      .video-js {
+        width: 300px;
+        height: 150px;
+      }
+
+      .vjs-fluid {
+        padding-top: 56.25%
+      }
+    </style><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>Blockchain Developer - Udacity</title><link rel="stylesheet" href="./Capstone 3_files/fonts.min.css"><link rel="stylesheet" href="./Capstone 3_files/katex.min.css" crossorigin="anonymous"><meta name="Baiduspider" content="nofollow"><meta name="Baiduspider" content="noarchive"><link rel="apple-touch-icon" href="https://classroom.udacity.com/touch-icon.png"><link rel="manifest" href="https://classroom.udacity.com/manifest.json"><script type="text/javascript" id="www-widgetapi-script" src="./Capstone 3_files/www-widgetapi.js.download" async=""></script><script type="text/javascript" async="" src="./Capstone 3_files/linkid.js.download"></script><script type="text/javascript" src="./Capstone 3_files/2059d2614a"></script><script type="text/javascript" async="" src="./Capstone 3_files/analytics.js.download"></script><script type="text/javascript" async="" src="./Capstone 3_files/av16vnft"></script><script type="text/javascript" async="" src="./Capstone 3_files/blueshift.js.download"></script><script src="./Capstone 3_files/nr-spa-1099.min.js.download"></script><script type="text/javascript" async="" src="./Capstone 3_files/analytics.min.js.download"></script><script>window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{s.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(21),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,s){try{l?l-=1:o(s||new UncaughtException(t,e,n),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t,e){var n=e?null:c.now();i("err",[t,n])}var i=t("handle"),a=t(22),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,p="nr@seenError",l=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(13),t(12),"addEventListener"in window&&t(6),c.xhrWrappable&&t(14),d=!0)}s.on("fn-start",function(t,e,n){d&&(l+=1)}),s.on("fn-err",function(t,e,n){d&&!n[p]&&(f(n,p,function(){return!0}),this.thrown=!0,o(n))}),s.on("fn-end",function(){d&&!this.thrown&&l>0&&(l-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(){M++,N=y.hash,this[u]=g.now()}function o(){M--,y.hash!==N&&i(0,!0);var t=g.now();this[h]=~~this[h]+t-this[u],this[d]=t}function i(t,e){E.emit("newURL",[""+y,e])}function a(t,e){t.on(e,function(){this[e]=g.now()})}var s="-start",c="-end",f="-body",u="fn"+s,d="fn"+c,p="cb"+s,l="cb"+c,h="jsTime",m="fetch",v="addEventListener",w=window,y=w.location,g=t("loader");if(w[v]&&g.xhrWrappable){var b=t(10),x=t(11),E=t(8),O=t(6),P=t(13),R=t(7),T=t(14),L=t(9),j=t("ee"),S=j.get("tracer");t(15),g.features.spa=!0;var N,M=0;j.on(u,r),j.on(p,r),j.on(d,o),j.on(l,o),j.buffer([u,d,"xhr-done","xhr-resolved"]),O.buffer([u]),P.buffer(["setTimeout"+c,"clearTimeout"+s,u]),T.buffer([u,"new-xhr","send-xhr"+s]),R.buffer([m+s,m+"-done",m+f+s,m+f+c]),E.buffer(["newURL"]),b.buffer([u]),x.buffer(["propagate",p,l,"executor-err","resolve"+s]),S.buffer([u,"no-"+u]),L.buffer(["new-jsonp","cb-start","jsonp-error","jsonp-end"]),a(T,"send-xhr"+s),a(j,"xhr-resolved"),a(j,"xhr-done"),a(R,m+s),a(R,m+"-done"),a(L,"new-jsonp"),a(L,"jsonp-end"),a(L,"cb-start"),E.on("pushState-end",i),E.on("replaceState-end",i),w[v]("hashchange",i,!0),w[v]("load",i,!0),w[v]("popstate",function(){i(0,M>1)},!0)}},{}],5:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(13),s=t(12),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",p="resource",l="-start",h="-end",m="fn"+l,v="fn"+h,w="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(8);var b=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof b&&(this.bstStart=g.now())}),o.on(v,function(t,e){var n=t[0];n instanceof b&&i("bst",[n,e,this.bstStart,g.now()])}),a.on(m,function(t,e,n){this.bstStart=g.now(),this.bstType=n}),a.on(v,function(t,e){i(w,[e,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(v,function(t,e){i(w,[e,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+l,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(p)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],6:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),s=t(24)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=c(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?s(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],7:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&&(t[e]=function(){var t=r.apply(this,arguments);return o.emit(n+"start",arguments,t),t.then(function(e){return o.emit(n+"end",[null,e],t),e},function(e){throw o.emit(n+"end",[e],t),e})})}var o=t("ee").get("fetch"),i=t(21);e.exports=o;var a=window,s="fetch-",c=s+"body-",f=["arrayBuffer","blob","json","text","formData"],u=a.Request,d=a.Response,p=a.fetch,l="prototype";u&&d&&p&&(i(f,function(t,e){r(u[l],e,c),r(d[l],e,c)}),r(a,"fetch",s),o.on(s+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&&(n.rxSize=r),o.emit(s+"done",[null,e],n)}else o.emit(s+"done",[t],n)}))},{}],8:[function(t,e,n){var r=t("ee").get("history"),o=t(24)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],9:[function(t,e,n){function r(t){function e(){c.emit("jsonp-end",[],p),t.removeEventListener("load",e,!1),t.removeEventListener("error",n,!1)}function n(){c.emit("jsonp-error",[],p),c.emit("jsonp-end",[],p),t.removeEventListener("load",e,!1),t.removeEventListener("error",n,!1)}var r=t&&"string"==typeof t.nodeName&&"script"===t.nodeName.toLowerCase();if(r){var o="function"==typeof t.addEventListener;if(o){var a=i(t.src);if(a){var u=s(a),d="function"==typeof u.parent[u.key];if(d){var p={};f.inPlace(u.parent,[u.key],"cb-",p),t.addEventListener("load",e,!1),t.addEventListener("error",n,!1),c.emit("new-jsonp",[t.src],p)}}}}}function o(){return"addEventListener"in window}function i(t){var e=t.match(u);return e?e[1]:null}function a(t,e){var n=t.match(p),r=n[1],o=n[3];return o?a(o,e[r]):e[r]}function s(t){var e=t.match(d);return e&&e.length>=3?{key:e[2],parent:a(e[1],window)}:{key:t,parent:window}}var c=t("ee").get("jsonp"),f=t(24)(c);if(e.exports=c,o()){var u=/[?&](?:callback|cb)=([^&#]+)/,d=/(.*)\.([^.]+)/,p=/^(\w+)(\.|$)(.*)$/,l=["appendChild","insertBefore","replaceChild"];f.inPlace(HTMLElement.prototype,l,"dom-"),f.inPlace(HTMLHeadElement.prototype,l,"dom-"),f.inPlace(HTMLBodyElement.prototype,l,"dom-"),c.on("dom-start",function(t){r(t[0])})}},{}],10:[function(t,e,n){var r=t("ee").get("mutation"),o=t(24)(r),i=NREUM.o.MO;e.exports=r,i&&(window.MutationObserver=function(t){return this instanceof i?new i(o(t,"fn-")):i.apply(this,arguments)},MutationObserver.prototype=i.prototype)},{}],11:[function(t,e,n){function r(t){var e=a.context(),n=s(t,"executor-",e),r=new f(n);return a.context(r).getCtx=function(){return e},a.emit("new-promise",[r,e],e),r}function o(t,e){return e}var i=t(24),a=t("ee").get("promise"),s=i(a),c=t(21),f=NREUM.o.PR;e.exports=a,f&&(window.Promise=r,["all","race"].forEach(function(t){var e=f[t];f[t]=function(n){function r(t){return function(){a.emit("propagate",[null,!o],i),o=o||!t}}var o=!1;c(n,function(e,n){Promise.resolve(n).then(r("all"===t),r(!1))});var i=e.apply(f,arguments),s=f.resolve(i);return s}}),["resolve","reject"].forEach(function(t){var e=f[t];f[t]=function(t){var n=e.apply(f,arguments);return t!==n&&a.emit("propagate",[t,!0],n),n}}),f.prototype["catch"]=function(t){return this.then(null,t)},f.prototype=Object.create(f.prototype,{constructor:{value:r}}),c(Object.getOwnPropertyNames(f),function(t,e){try{r[e]=f[e]}catch(n){}}),a.on("executor-start",function(t){t[0]=s(t[0],"resolve-",this),t[1]=s(t[1],"resolve-",this)}),a.on("executor-err",function(t,e,n){t[1](n)}),s.inPlace(f.prototype,["then"],"then-",o),a.on("then-start",function(t,e){this.promise=e,t[0]=s(t[0],"cb-",this),t[1]=s(t[1],"cb-",this)}),a.on("then-end",function(t,e,n){this.nextPromise=n;var r=this.promise;a.emit("propagate",[r,!0],n)}),a.on("cb-end",function(t,e,n){a.emit("propagate",[n,!0],this.nextPromise)}),a.on("propagate",function(t,e,n){this.getCtx&&!e||(this.getCtx=function(){if(t instanceof Promise)var e=a.context(t);return e&&e.getCtx?e.getCtx():this})}),r.toString=function(){return""+f})},{}],12:[function(t,e,n){var r=t("ee").get("raf"),o=t(24)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],13:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(24)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],14:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(x?x.then(a):v?v(a):(E=-E,O.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(6);var f=t("ee"),u=f.get("xhr"),d=t(24)(u),p=NREUM.o,l=p.XHR,h=p.MO,m=p.PR,v=p.SI,w="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];e.exports=u;var b=window.XMLHttpRequest=function(t){var e=new l(t);try{u.emit("new-xhr",[e],e),e.addEventListener(w,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(l,b),b.prototype=l.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var x=m&&m.resolve();if(!v&&!m){var E=1,O=document.createTextNode(E);new h(a).observe(O,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===w||a()})},{}],15:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=a.now()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var c=t.getResponseHeader("X-NewRelic-App-Data");c&&(e.cat=c.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),s("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=c(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var s=t("handle"),c=t(16),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,p=t("id"),l=t(19),h=t(18),m=window.XMLHttpRequest;a.features.xhr=!0,t(14),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,l&&(l>34||l<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=a.now(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var s=0;s<d;s++)e.addEventListener(u[s],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+p(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=a.now()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[a.now()-this.xhrCbStart,this.onload,e],e)})}},{}],16:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],17:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[f.now()].concat(s(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(21),s=t(22),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){u[e]=o(p+e,!0,"api")}),u.addPageAction=o(p+"addPageAction",!0),u.setCurrentRouteName=o(p+"routeName",!0),e.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[f.now(),t,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[f.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){h[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now()])}},{}],18:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],19:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],20:[function(t,e,n){function r(t,e){if(!o)return!1;if(t!==o)return!1;if(!e)return!0;if(!i)return!1;for(var n=i.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}e.exports={agent:o,version:i,match:r}},{}],21:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],22:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],23:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],24:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(22),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof n?n(r,a):n||{}}catch(f){p([f,"",[r,a,o],s])}u(e+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],s),d}finally{u(e+"end",[r,a,c],s)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<e.length;c++)s=e[c],a=t[s],r(a)||(t[s]=n(a,f?s+o:o,i,s))}function u(n,r,o){if(!c||e){var i=c;c=!0;try{t.emit(n,r,o,e)}catch(a){p([a,n,r,o])}c=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){p([r])}for(var o in t)s.call(t,o)&&(e[o]=t[o]);return e}function p(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function n(n,r,o,i){if(!p.aborted||i){t&&t(n,r,o);for(var a=e(o),s=m(n),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[g[n]];return d&&d.push([b,n,r,a]),a}}function l(t,e){y[t]=m(t).concat(e)}function h(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function m(t){return y[t]||[]}function v(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",g[n]=e,e in u||(u[e]=[])})}var y={},g={},b={on:l,addEventListener:l,removeEventListener:h,emit:n,get:v,listeners:m,context:e,buffer:w,abort:a,aborted:!1};return b}function i(){return new r}function a(){(u.api||u.feature)&&(p.aborted=!0,u=p.backlog={})}var s="nr@context",c=t("gos"),f=t(21),u={},d={},p=e.exports=o();p.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!E++){var t=x.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();f(g,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()+x.offset],null,"api");var n=l.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===l.readyState&&i()}function i(){c("mark",["domContent",a()+x.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-x.offset}var s=(new Date).getTime(),c=t("handle"),f=t(21),u=t("ee"),d=t(20),p=window,l=p.document,h="addEventListener",m="attachEvent",v=p.XMLHttpRequest,w=v&&v.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:v,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var y=""+location,g={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-spa-1099.min.js"},b=v&&w&&w[h]&&!/CriOS/.test(navigator.userAgent),x=e.exports={offset:s,now:a,origin:y,features:{},xhrWrappable:b,userAgent:d};t(17),l[h]?(l[h]("DOMContentLoaded",i,!1),p[h]("load",r,!1)):(l[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",s],null,"api");var E=0,O=t(23)},{}]},{},["loader",2,15,5,3,4]);
+    ;NREUM.info={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",licenseKey:"2059d2614a",applicationID:"17871435",sa:1}</script><script>!function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"sgmt.udacity.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+  }}();</script><link href="./Capstone 3_files/11.49b29.css" rel="stylesheet"><link href="./Capstone 3_files/app.dbcd9.css" rel="stylesheet"><style type="text/css">.input-range__slider {
+  appearance: none;
+  background: #3f51b5;
+  border: 1px solid #3f51b5;
+  border-radius: 100%;
+  cursor: pointer;
+  display: block;
+  height: 1rem;
+  margin-left: -0.5rem;
+  margin-top: -0.65rem;
+  outline: none;
+  position: absolute;
+  top: 50%;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  width: 1rem; }
+  .input-range__slider:active {
+    transform: scale(1.3); }
+  .input-range__slider:focus {
+    box-shadow: 0 0 0 5px rgba(63, 81, 181, 0.2); }
+  .input-range--disabled .input-range__slider {
+    background: #cccccc;
+    border: 1px solid #cccccc;
+    box-shadow: none;
+    transform: none; }
+
+.input-range__slider-container {
+  transition: left 0.3s ease-out; }
+
+.input-range__label {
+  color: #aaaaaa;
+  font-family: "Helvetica Neue", san-serif;
+  font-size: 0.8rem;
+  transform: translateZ(0);
+  white-space: nowrap; }
+
+.input-range__label--min,
+.input-range__label--max {
+  bottom: -1.4rem;
+  position: absolute; }
+
+.input-range__label--min {
+  left: 0; }
+
+.input-range__label--max {
+  right: 0; }
+
+.input-range__label--value {
+  position: absolute;
+  top: -1.8rem; }
+
+.input-range__label-container {
+  left: -50%;
+  position: relative; }
+  .input-range__label--max .input-range__label-container {
+    left: 50%; }
+
+.input-range__track {
+  background: #eeeeee;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  display: block;
+  height: 0.3rem;
+  position: relative;
+  transition: left 0.3s ease-out, width 0.3s ease-out; }
+  .input-range--disabled .input-range__track {
+    background: #eeeeee; }
+
+.input-range__track--background {
+  left: 0;
+  margin-top: -0.15rem;
+  position: absolute;
+  right: 0;
+  top: 50%; }
+
+.input-range__track--active {
+  background: #3f51b5; }
+
+.input-range {
+  height: 1rem;
+  position: relative;
+  width: 100%; }</style><style type="text/css">.rc-tooltip.rc-tooltip-zoom-enter,
+.rc-tooltip.rc-tooltip-zoom-leave {
+  display: block;
+}
+.rc-tooltip-zoom-enter,
+.rc-tooltip-zoom-appear {
+  opacity: 0;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
+  animation-play-state: paused;
+}
+.rc-tooltip-zoom-leave {
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.6, -0.3, 0.74, 0.05);
+  animation-play-state: paused;
+}
+.rc-tooltip-zoom-enter.rc-tooltip-zoom-enter-active,
+.rc-tooltip-zoom-appear.rc-tooltip-zoom-appear-active {
+  animation-name: rcToolTipZoomIn;
+  animation-play-state: running;
+}
+.rc-tooltip-zoom-leave.rc-tooltip-zoom-leave-active {
+  animation-name: rcToolTipZoomOut;
+  animation-play-state: running;
+}
+@keyframes rcToolTipZoomIn {
+  0% {
+    opacity: 0;
+    transform-origin: 50% 50%;
+    transform: scale(0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform-origin: 50% 50%;
+    transform: scale(1, 1);
+  }
+}
+@keyframes rcToolTipZoomOut {
+  0% {
+    opacity: 1;
+    transform-origin: 50% 50%;
+    transform: scale(1, 1);
+  }
+  100% {
+    opacity: 0;
+    transform-origin: 50% 50%;
+    transform: scale(0, 0);
+  }
+}
+.rc-tooltip {
+  position: absolute;
+  z-index: 1070;
+  display: block;
+  visibility: visible;
+  font-size: 12px;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+.rc-tooltip-hidden {
+  display: none;
+}
+.rc-tooltip-placement-top,
+.rc-tooltip-placement-topLeft,
+.rc-tooltip-placement-topRight {
+  padding: 5px 0 9px 0;
+}
+.rc-tooltip-placement-right,
+.rc-tooltip-placement-rightTop,
+.rc-tooltip-placement-rightBottom {
+  padding: 0 5px 0 9px;
+}
+.rc-tooltip-placement-bottom,
+.rc-tooltip-placement-bottomLeft,
+.rc-tooltip-placement-bottomRight {
+  padding: 9px 0 5px 0;
+}
+.rc-tooltip-placement-left,
+.rc-tooltip-placement-leftTop,
+.rc-tooltip-placement-leftBottom {
+  padding: 0 9px 0 5px;
+}
+.rc-tooltip-inner {
+  padding: 8px 10px;
+  color: #fff;
+  text-align: left;
+  text-decoration: none;
+  background-color: #373737;
+  border-radius: 6px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.17);
+  min-height: 34px;
+}
+.rc-tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+.rc-tooltip-placement-top .rc-tooltip-arrow,
+.rc-tooltip-placement-topLeft .rc-tooltip-arrow,
+.rc-tooltip-placement-topRight .rc-tooltip-arrow {
+  bottom: 4px;
+  margin-left: -5px;
+  border-width: 5px 5px 0;
+  border-top-color: #373737;
+}
+.rc-tooltip-placement-top .rc-tooltip-arrow {
+  left: 50%;
+}
+.rc-tooltip-placement-topLeft .rc-tooltip-arrow {
+  left: 15%;
+}
+.rc-tooltip-placement-topRight .rc-tooltip-arrow {
+  right: 15%;
+}
+.rc-tooltip-placement-right .rc-tooltip-arrow,
+.rc-tooltip-placement-rightTop .rc-tooltip-arrow,
+.rc-tooltip-placement-rightBottom .rc-tooltip-arrow {
+  left: 4px;
+  margin-top: -5px;
+  border-width: 5px 5px 5px 0;
+  border-right-color: #373737;
+}
+.rc-tooltip-placement-right .rc-tooltip-arrow {
+  top: 50%;
+}
+.rc-tooltip-placement-rightTop .rc-tooltip-arrow {
+  top: 15%;
+  margin-top: 0;
+}
+.rc-tooltip-placement-rightBottom .rc-tooltip-arrow {
+  bottom: 15%;
+}
+.rc-tooltip-placement-left .rc-tooltip-arrow,
+.rc-tooltip-placement-leftTop .rc-tooltip-arrow,
+.rc-tooltip-placement-leftBottom .rc-tooltip-arrow {
+  right: 4px;
+  margin-top: -5px;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #373737;
+}
+.rc-tooltip-placement-left .rc-tooltip-arrow {
+  top: 50%;
+}
+.rc-tooltip-placement-leftTop .rc-tooltip-arrow {
+  top: 15%;
+  margin-top: 0;
+}
+.rc-tooltip-placement-leftBottom .rc-tooltip-arrow {
+  bottom: 15%;
+}
+.rc-tooltip-placement-bottom .rc-tooltip-arrow,
+.rc-tooltip-placement-bottomLeft .rc-tooltip-arrow,
+.rc-tooltip-placement-bottomRight .rc-tooltip-arrow {
+  top: 4px;
+  margin-left: -5px;
+  border-width: 0 5px 5px;
+  border-bottom-color: #373737;
+}
+.rc-tooltip-placement-bottom .rc-tooltip-arrow {
+  left: 50%;
+}
+.rc-tooltip-placement-bottomLeft .rc-tooltip-arrow {
+  left: 15%;
+}
+.rc-tooltip-placement-bottomRight .rc-tooltip-arrow {
+  right: 15%;
+}
+</style><link rel="stylesheet" type="text/css" href="./Capstone 3_files/0.63cd2.css"><script charset="utf-8" src="./Capstone 3_files/vendors_routes-courses_routes-nanodegrees_routes-settings.06fe2.js.download"></script><link rel="stylesheet" type="text/css" href="./Capstone 3_files/2.b589a.css"><script charset="utf-8" src="./Capstone 3_files/vendors_routes-courses_routes-nanodegrees.1ce1b.js.download"></script><link rel="stylesheet" type="text/css" href="./Capstone 3_files/14.19230.css"><script charset="utf-8" src="./Capstone 3_files/vendors_routes-nanodegrees.d4e4b.js.download"></script><link rel="stylesheet" type="text/css" href="./Capstone 3_files/1.c7204.css"><script charset="utf-8" src="./Capstone 3_files/routes-courses_routes-nanodegrees.e9aaa.js.download"></script><link rel="stylesheet" type="text/css" href="./Capstone 3_files/8.3c3b5.css"><script charset="utf-8" src="./Capstone 3_files/routes-nanodegrees.b4fb5.js.download"></script><script charset="utf-8" src="./Capstone 3_files/rate-session-modal.259f7.js.download"></script><link rel="stylesheet" type="text/css" href="./Capstone 3_files/10.c39d5.css"><script charset="utf-8" src="./Capstone 3_files/survey-modal.e26d8.js.download"></script><script type="text/javascript" charset="utf8" async="" src="./Capstone 3_files/iframe_api"></script></head><body data-gr-c-s-loaded="true" lang="en-US" dir="ltr"><div id="app"><div id="main"><style type="text/css">
+#intercom-container {
+  display: none;
+}
+</style><div class="content"><div data-test="nanodegree-container"><div class="index-module--container--2W0L_"></div><div><noscript></noscript><div><div class="_layout-module--container--3f2U4"><ul class="_layout-module--a11y-nav--vkRI0"><li><a href="https://classroom.udacity.com/nanodegrees/nd1309/parts/36b45ada-c0e5-495e-b6cc-34ea14a18d61/modules/43d200d0-9ce6-4e20-b1c0-39a4e00ac275/lessons/d35b025b-01b3-4bd9-acf5-e8bb5b88f00c/concepts/a431480a-c27c-437d-a911-8d442d2c8624#content">Jump to content</a></li><li><a href="mailto:a11y@udacity.com?subject=Accessibility%20Support" target="_blank">Email for accessibility support</a></li></ul><nav class="_layout-module--nav--3qaiq _layout-module--secondary-only--33dGC "><div class="_layout-module--nav-contents--3VsBp"><div id="main-layout-sidebar" class="_layout-module--secondary-nav--dElFh"><div data-test="lesson-sidebar"><div class="_sidebar--sidebar--1jCxg"><h3 class="_sidebar--header--2BaH_"><a href="https://classroom.udacity.com/nanodegrees/nd1309/parts/36b45ada-c0e5-495e-b6cc-34ea14a18d61"><span class="_sidebar--title-content--tLGxZ"><span class="_sidebar--arrow--2Hns-"><i class="vds-icon vds-icon--lg" role="img" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M20.589 23.84l-10.175-7.13c-.422-.297-.541-.903-.265-1.356a.947.947 0 0 1 .276-.292L20.6 8.152c.425-.29.99-.153 1.259.304.092.157.141.338.141.524v14.04c0 .542-.409.98-.912.98a.868.868 0 0 1-.5-.16z" fill-rule="evenodd"></path></svg></i></span><span class="_sidebar--title--3HHFG text--nowrap-ellipsis--TMdB3"><span>Project:</span><span class="_sidebar--title-text--vcBON text--nowrap-ellipsis--TMdB3"> Capstone: Real Estate Marketplace</span></span></span></a></h3><div class="_sidebar--sections--2TxEN"><div role="group" aria-expanded="false" class="_section--section--3V1-y shared--section--3e1zX _section--_hide-shadow--1yGng"><a href="https://classroom.udacity.com/nanodegrees/nd1309/parts/36b45ada-c0e5-495e-b6cc-34ea14a18d61/modules/43d200d0-9ce6-4e20-b1c0-39a4e00ac275/lessons/d35b025b-01b3-4bd9-acf5-e8bb5b88f00c/concepts/a431480a-c27c-437d-a911-8d442d2c8624#" class="_section--header--hPsXJ shared--header--3QkFS"><h2>Search</h2><i class="vds-icon vds-icon--sm vds-color--silver" role="img"><span class="vds-visually-hidden">Search</span><svg viewBox="0 0 32 32"><path d="M21.176 19.762l4.531 4.53a1 1 0 0 1-1.414 1.415l-4.531-4.531a8.5 8.5 0 1 1 1.414-1.414zM14.5 21a6.5 6.5 0 1 0 0-13 6.5 6.5 0 0 0 0 13z" fill-rule="nonzero"></path></svg></i></a></div><div role="group" aria-expanded="false" class="_section--section--3V1-y shared--section--3e1zX _section--_hide-shadow--1yGng"><a href="https://classroom.udacity.com/nanodegrees/nd1309/parts/36b45ada-c0e5-495e-b6cc-34ea14a18d61/modules/43d200d0-9ce6-4e20-b1c0-39a4e00ac275/lessons/d35b025b-01b3-4bd9-acf5-e8bb5b88f00c/concepts/a431480a-c27c-437d-a911-8d442d2c8624#" class="_section--header--hPsXJ shared--header--3QkFS"><h2>Resources</h2><span class="_section--expand--3Y-E2 shared--expand--239lE"><i class="vds-icon vds-icon--sm" role="img"><span class="vds-visually-hidden">Open</span><svg viewBox="0 0 32 32"><path d="M8.16 11.411l7.13 10.175c.297.422.903.541 1.356.265a.947.947 0 0 0 .292-.276l6.91-10.175c.29-.425.153-.99-.304-1.259A1.033 1.033 0 0 0 23.02 10H8.98c-.542 0-.98.409-.98.912 0 .178.055.351.16.5z" fill-rule="evenodd"></path></svg></i></span></a></div><div role="group" aria-expanded="true" class="_section--section-selected--24hRk shared--section-expanded--2eoTJ shared--section--3e1zX _section--_hide-shadow--1yGng"><a href="https://classroom.udacity.com/nanodegrees/nd1309/parts/36b45ada-c0e5-495e-b6cc-34ea14a18d61/modules/43d200d0-9ce6-4e20-b1c0-39a4e00ac275/lessons/d35b025b-01b3-4bd9-acf5-e8bb5b88f00c/concepts/a431480a-c27c-437d-a911-8d442d2c8624#" aria-owns="tree-concepts" class="_section--header-expanded--2PtoU shared--header-expanded--290TG shared--header--3QkFS"><h2>Concepts</h2><span class="_section--collapse--3crCv shared--collapse--2w1x2"><i class="vds-icon vds-icon--sm" role="img"><span class="vds-visually-hidden">Close</span><svg viewBox="0 0 32 32"><path d="M8.16 11.411l7.13 10.175c.297.422.903.541 1.356.265a.947.947 0 0 0 .292-.276l6.91-10.175c.29-.425.153-.99-.304-1.259A1.033 1.033 0 0 0 23.02 10H8.98c-.542 0-.98.409-.98.912 0 .178.055.351.16.5z" fill-rule="evenodd"></path></svg></i></span></a><div id="tree-concepts"><ol class="index--contents-list--33vHB"><li id="contents-list-scroll-target-4d2728c0-0886-4ba2-aa61-bf1362bc3664" class="_item--item--dTIux"><a title="1. Project Introduction" href="https://classroom.udacity.com/nanodegrees/nd1309/parts/36b45ada-c0e5-495e-b6cc-34ea14a18d61/modules/43d200d0-9ce6-4e20-b1c0-39a4e00ac275/lessons/d35b025b-01b3-4bd9-acf5-e8bb5b88f00c/concepts/4d2728c0-0886-4ba2-aa61-bf1362bc3664"><span class="_item--waypoint-check--nmzcM"><i class="vds-icon vds-icon--sm" role="img" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M7.707 17.093a1 1 0 0 0-1.414 1.414l7.2 7.2a1 1 0 0 0 1.564-.192l10.8-18a1 1 0 1 0-1.714-1.03L14 23.388l-6.294-6.294z" fill-rule="nonzero"></path></svg></i></span> 1. Project Introduction</a></li><li id="contents-list-scroll-target-218592ad-ea20-4b39-ae73-a11ee459ea8e" class="_item--item--dTIux"><a title="2. OpenSea" href="https://classroom.udacity.com/nanodegrees/nd1309/parts/36b45ada-c0e5-495e-b6cc-34ea14a18d61/modules/43d200d0-9ce6-4e20-b1c0-39a4e00ac275/lessons/d35b025b-01b3-4bd9-acf5-e8bb5b88f00c/concepts/218592ad-ea20-4b39-ae73-a11ee459ea8e"><span class="_item--waypoint-check--nmzcM"><i class="vds-icon vds-icon--sm" role="img" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M7.707 17.093a1 1 0 0 0-1.414 1.414l7.2 7.2a1 1 0 0 0 1.564-.192l10.8-18a1 1 0 1 0-1.714-1.03L14 23.388l-6.294-6.294z" fill-rule="nonzero"></path></svg></i></span> 2. OpenSea</a></li><li id="contents-list-scroll-target-a431480a-c27c-437d-a911-8d442d2c8624" class="_item--item-selected--3LMMf"><a title="3. ZoKrates" href="https://classroom.udacity.com/nanodegrees/nd1309/parts/36b45ada-c0e5-495e-b6cc-34ea14a18d61/modules/43d200d0-9ce6-4e20-b1c0-39a4e00ac275/lessons/d35b025b-01b3-4bd9-acf5-e8bb5b88f00c/concepts/a431480a-c27c-437d-a911-8d442d2c8624"><span class="_item--waypoint-check--nmzcM"><i class="vds-icon vds-icon--sm" role="img" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M7.707 17.093a1 1 0 0 0-1.414 1.414l7.2 7.2a1 1 0 0 0 1.564-.192l10.8-18a1 1 0 1 0-1.714-1.03L14 23.388l-6.294-6.294z" fill-rule="nonzero"></path></svg></i></span> 3. ZoKrates</a></li><li id="contents-list-scroll-target-5feee81f-451f-448e-a832-0fec8bb43359" class="_item--item--dTIux"><a title="4. Project Materials" href="https://classroom.udacity.com/nanodegrees/nd1309/parts/36b45ada-c0e5-495e-b6cc-34ea14a18d61/modules/43d200d0-9ce6-4e20-b1c0-39a4e00ac275/lessons/d35b025b-01b3-4bd9-acf5-e8bb5b88f00c/concepts/5feee81f-451f-448e-a832-0fec8bb43359"><span class="_item--waypoint-check--nmzcM"><i class="vds-icon vds-icon--sm" role="img" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M7.707 17.093a1 1 0 0 0-1.414 1.414l7.2 7.2a1 1 0 0 0 1.564-.192l10.8-18a1 1 0 1 0-1.714-1.03L14 23.388l-6.294-6.294z" fill-rule="nonzero"></path></svg></i></span> 4. Project Materials</a></li><li id="contents-list-scroll-target-15c7ada0-2cd8-4b69-8b13-f6930e108a11" class="_item--item--dTIux"><a title="5. Project: Capstone: Real Estate Marketplace" href="https://classroom.udacity.com/nanodegrees/nd1309/parts/36b45ada-c0e5-495e-b6cc-34ea14a18d61/modules/43d200d0-9ce6-4e20-b1c0-39a4e00ac275/lessons/d35b025b-01b3-4bd9-acf5-e8bb5b88f00c/project"><span class="_item--waypoint-star--1dLwl"><i class="vds-icon vds-icon--sm" role="img" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M15.794 23.048l-5.63 2.852a1 1 0 0 1-1.436-1.067l1.066-5.987-4.479-4.207a1 1 0 0 1 .546-1.72l6.224-.87 2.819-5.505a1 1 0 0 1 1.78 0l2.818 5.504 6.224.872a1 1 0 0 1 .546 1.719l-4.478 4.207 1.065 5.987a1 1 0 0 1-1.437 1.067l-5.628-2.852z" fill-rule="nonzero"></path></svg></i></span> 5. Project: Capstone: Real Estate Marketplace</a></li></ol></div></div></div><div class="_sidebar--footer--2i1oy"><ul class="_service-links--service-links--25Cft"><li><a role="link" tabindex="0" class="_service-links--service-link-item--1qvdY"><span class="_service-links--glyph-wrapper--2tXod _service-links--knowledge--2IhC7"><i class="vds-icon" role="img" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M17.732 27a2 2 0 0 1-3.464 0H14a2 2 0 0 1-2-2v-3.936a9 9 0 1 1 8 0V25a2 2 0 0 1-2 2h-.268zM18 22v-1h-4v1h4zm0 2h-4v1h4v-1zm-5.61-5h7.22a7 7 0 1 0-7.218 0zM16 8a1 1 0 0 1 0 2 3 3 0 0 0-3 3 1 1 0 0 1-2 0 5 5 0 0 1 5-5z" fill-rule="nonzero"></path></svg></i></span><span class="_service-links--service-title--2KAOW">Knowledge</span><span class="_service-links--service-description--2JMqH">Search project Q&amp;A</span></a></li><li><a role="link" tabindex="0" class="_service-links--service-link-item--1qvdY"><span class="_service-links--glyph-wrapper--2tXod _service-links--student-hub--2nOuu"><i class="vds-icon" role="img" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M12 10.397V9a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3h-2v3.397a3 3 0 0 1-3 3H9.823l-4.325 2.471a1 1 0 0 1-1.486-1.01l.99-6.93v-5.531a3 3 0 0 1 3-3H12zM23 16h2a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1H15a1 1 0 0 0-1 1v1.397h6a3 3 0 0 1 3 3V16zM6.99 19.141l-.71 4.976 2.78-1.588a1 1 0 0 1 .496-.132h10.445a1 1 0 0 0 1-1v-8a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1V19l-.01.141z" fill-rule="nonzero"></path></svg></i></span><span class="_service-links--service-title--2KAOW">Student Hub</span><span class="_service-links--service-description--2JMqH">Chat with peers and mentors</span></a></li></ul></div></div></div></div></div></nav><main class="_layout-module--main--20EWg"><div class="_layout-module--title-area--1yynf"><div class="_header-module--header--1boX-"><div><div data-test="concept-header"><nav class="index--dark-header--2SHyn index--_header--36qYf"><div class="vds-flex vds-flex--align-center vds-flex--full vds-flex--justify-between vds-flex--spacing-2x"><div class="vds-flex__item"><div class="hamburger--hamburger--1oS_7 index--hamburger--31PjM"><a href="https://classroom.udacity.com/nanodegrees/nd1309/parts/36b45ada-c0e5-495e-b6cc-34ea14a18d61/modules/43d200d0-9ce6-4e20-b1c0-39a4e00ac275/lessons/d35b025b-01b3-4bd9-acf5-e8bb5b88f00c/concepts/a431480a-c27c-437d-a911-8d442d2c8624#" class="hamburger--hamburger-link--3-KRS"><i class="vds-icon vds-color--cerulean" role="img"><span class="vds-visually-hidden">Toggle Sidebar</span><svg viewBox="0 0 32 32"><path d="M8 23a1 1 0 0 1 0-2h16a1 1 0 0 1 0 2H8zm0-6a1 1 0 0 1 0-2h16a1 1 0 0 1 0 2H8zm0-6a1 1 0 0 1 0-2h16a1 1 0 0 1 0 2H8z" fill-rule="nonzero"></path></svg></i></a></div></div><div class="vds-flex__item"><h1 id="header-title" aria-live="assertive">ZoKrates</h1></div><div class="vds-flex__item"><div><span class="index--from-tablet--cciH6"><button class="vds-button vds-button--minimal vds-button--small" aria-busy="false" type="button"><span class="vds-button__content">Send Feedback</span></button></span><span class="index--until-tablet--3TJ_9"><button class="vds-button vds-button--minimal vds-button__icon vds-button__icon--only" aria-busy="false" type="button"><span class="vds-button__content"><i class="vds-icon vds-color--cerulean" role="img" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M18.245 16.566L16.6 17.8a1 1 0 0 1-1.2 0l-1.6-1.2a1.009 1.009 0 0 1-.093.107l-2 2a1 1 0 0 1-1.414-1.414l1.899-1.9-4.193-3.143L8 20.998 24.001 21 24 12.25l-4.196 3.147 1.903 1.896a1 1 0 0 1-1.414 1.414l-2.1-2.102.052-.039zM9.667 11L16 15.75l6.33-4.748L9.667 11zM6 11.002C6 9.9 6.89 9 7.993 9h16.014C25.108 9 26 9.904 26 11.002v9.996C26 22.1 25.11 23 24.007 23H7.993A2.002 2.002 0 0 1 6 20.998v-9.996z" fill-rule="nonzero"></path></svg></i><span class="vds-visually-hidden"></span></span></button></span></div></div></div></nav></div></div></div></div><div class="_layout-module--content-area--tGmoA" style="background-color: rgb(250, 251, 252);"><div aria-hidden="true" class="_layout-module--hidden-header--3JZ5t"><div class="_header-module--header--1boX-"><div><div data-test="concept-header"><nav class="index--dark-header--2SHyn index--_header--36qYf"><div class="vds-flex vds-flex--align-center vds-flex--full vds-flex--justify-between vds-flex--spacing-2x"><div class="vds-flex__item"><div class="hamburger--hamburger--1oS_7 index--hamburger--31PjM"><a href="https://classroom.udacity.com/nanodegrees/nd1309/parts/36b45ada-c0e5-495e-b6cc-34ea14a18d61/modules/43d200d0-9ce6-4e20-b1c0-39a4e00ac275/lessons/d35b025b-01b3-4bd9-acf5-e8bb5b88f00c/concepts/a431480a-c27c-437d-a911-8d442d2c8624#" class="hamburger--hamburger-link--3-KRS"><i class="vds-icon vds-color--cerulean" role="img"><span class="vds-visually-hidden">Toggle Sidebar</span><svg viewBox="0 0 32 32"><path d="M8 23a1 1 0 0 1 0-2h16a1 1 0 0 1 0 2H8zm0-6a1 1 0 0 1 0-2h16a1 1 0 0 1 0 2H8zm0-6a1 1 0 0 1 0-2h16a1 1 0 0 1 0 2H8z" fill-rule="nonzero"></path></svg></i></a></div></div><div class="vds-flex__item"><h1 id="header-title" aria-live="assertive">ZoKrates</h1></div><div class="vds-flex__item"><div><span class="index--from-tablet--cciH6"><button class="vds-button vds-button--minimal vds-button--small" aria-busy="false" type="button"><span class="vds-button__content">Send Feedback</span></button></span><span class="index--until-tablet--3TJ_9"><button class="vds-button vds-button--minimal vds-button__icon vds-button__icon--only" aria-busy="false" type="button"><span class="vds-button__content"><i class="vds-icon vds-color--cerulean" role="img" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M18.245 16.566L16.6 17.8a1 1 0 0 1-1.2 0l-1.6-1.2a1.009 1.009 0 0 1-.093.107l-2 2a1 1 0 0 1-1.414-1.414l1.899-1.9-4.193-3.143L8 20.998 24.001 21 24 12.25l-4.196 3.147 1.903 1.896a1 1 0 0 1-1.414 1.414l-2.1-2.102.052-.039zM9.667 11L16 15.75l6.33-4.748L9.667 11zM6 11.002C6 9.9 6.89 9 7.993 9h16.014C25.108 9 26 9.904 26 11.002v9.996C26 22.1 25.11 23 24.007 23H7.993A2.002 2.002 0 0 1 6 20.998v-9.996z" fill-rule="nonzero"></path></svg></i><span class="vds-visually-hidden"></span></span></button></span></div></div></div></nav></div></div></div></div><div id="content"></div><div id="main-layout-content" aria-labelledby="header-title" class="_body-module--body--UXv_5"><div data-test="concept-main" class="_main--main--3mpPA"><div class="_main--content-container--ILkoI"><noscript></noscript><div><div class="index--container--2OwOl"><div class="index--atom--lmAIo layout--content--3Smmq"><div class="ltr"><div class="index-module--markdown--2MdcR ureact-markdown "><h1 id="zokrates">ZoKrates</h1>
+<p>You have learned about zkSnarks in <a target="_blank" href="https://classroom.udacity.com/nanodegrees/nd1309/parts/8ccccdaa-79a3-443a-a03f-00cacd0277b7/modules/47d6cc21-fafe-406e-8370-e5ba23875da8/lessons/1190304c-4bbb-49e4-be0a-238b4e6f10bf/concepts/e4563a8e-fa74-4893-b6d7-75c6a49f57a7">previous lesson</a></p>
+<p>Succinct Zero-Knowledge proofs (zkSnarks) are proving to be one of the most promising frameworks for enhancing privacy and scalability in the blockchain space.</p>
+<p>Projects like Zcash are using zkSnarks to make payments anonymous (rather than pseudonymous). Other projects such as Coda are experimenting with trustless light clients by using recursive zkSnarks to dramatically reduce the number of state verifications blockchain clients have to perform when coming online. Ethereum founder, <a target="_blank" href="https://ethresear.ch/t/on-chain-scaling-to-potentially-500-tx-sec-through-mass-tx-validation/3477">Vitalik Buterin wrote how zkSnarks can be used to scale transaction speed on Ethereum</a></p>
+<p>In this lesson you will learn how to implement zkSnarks using ZoKrates, a toolbox for zkSNARKs on Ethereum.
+Traditionally, snarks are written using NP complete arithmetic circuits which can be compared to writing assembly code in traditional machine programming. ZoKrates provides a higher level programming language (something like C in the same metaphor) which compiles down to the underlying constraint system and thus allows programmers to write snarks much closer to how they are used to programming.</p>
+</div></div><span></span></div></div></div><div><div class="index--container--2OwOl"><div class="index--atom--lmAIo layout--content--3Smmq"><div><a href="https://classroom.udacity.com/nanodegrees/nd1309/parts/36b45ada-c0e5-495e-b6cc-34ea14a18d61/modules/43d200d0-9ce6-4e20-b1c0-39a4e00ac275/lessons/d35b025b-01b3-4bd9-acf5-e8bb5b88f00c/concepts/a431480a-c27c-437d-a911-8d442d2c8624#" class="image-atom--image-atom--1XDdu"><div class="index--image-atom-content--YoZVu"><div class="index--image-and-annotations-container--1o6QP"><img src="./Capstone 3_files/687474703a2f2f7777772e726564616b74696f6e2e74752d6265726c696e2e64652f66696c6561646d696e2f66673330382f69636f6e732f70726f6a656b74652f6c6f676f732f5a6f4b72617465735f6c6f676f2e73766.svg" alt="" width="300px" class="index--image--1wh9w"></div></div></a></div><span></span></div></div></div><div><div class="index--container--2OwOl"><div class="index--atom--lmAIo layout--content--3Smmq"><div class="ltr"><div class="index-module--markdown--2MdcR ureact-markdown "><h1 id="getting-started-with-zokrates">Getting Started with Zokrates</h1>
+<h3 id="step-1-install-docker">Step 1: Install Docker</h3>
+<p>Currently, Docker is the recommended way to get started with Zokrates. Docker is a tool designed to make it easier to create, deploy, and run applications by using containers. Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and ship it all out as one package. You can find instructions for installing it <a target="_blank" href="https://docs.docker.com/install/">here.</a></p>
+<h3 id="step-2-run-zokrates">Step 2: Run ZoKrates</h3>
+<p>Run ZoKrates docker container:</p>
+<p><code>docker run -v &lt;path to your project folder&gt;:/home/zokrates/code -ti zokrates/zokrates /bin/bash</code></p>
+<p>This command breaks out into:</p>
+<p><code>docker run</code> -  Run a docker container</p>
+<p><code>-v &lt;path to your project folder&gt;:/home/zokrates/code</code> - Create a host mapped volume inside the container</p>
+<p><code>-it</code>  - Connect the container to terminal</p>
+<p><code>zokrates/zokrates</code> -  Pull the docker image from here: <a target="_blank" href="https://hub.docker.com/r/zokrates/zokrates">https://hub.docker.com/r/zokrates/zokrates</a></p>
+<p><code>/bin/bash</code> - Run /bin/bash in the container</p>
+<h3 id="step-3-a-quick-overview-of-the-zokrates-process">Step 3: A Quick Overview of the ZoKrates Process</h3>
+</div></div><span></span></div></div></div><div><div class="index--container--2OwOl"><div class="index--atom--lmAIo layout--content--3Smmq"><div><a href="https://classroom.udacity.com/nanodegrees/nd1309/parts/36b45ada-c0e5-495e-b6cc-34ea14a18d61/modules/43d200d0-9ce6-4e20-b1c0-39a4e00ac275/lessons/d35b025b-01b3-4bd9-acf5-e8bb5b88f00c/concepts/a431480a-c27c-437d-a911-8d442d2c8624#" class="image-atom--image-atom--1XDdu"><div class="index--image-atom-content--YoZVu"><div class="index--image-and-annotations-container--1o6QP"><img src="./Capstone 3_files/zokrates-process.png" alt="" width="500px" class="index--image--1wh9w"></div></div></a></div><span></span></div></div></div><div><div class="index--container--2OwOl"><div class="index--atom--lmAIo layout--content--3Smmq"><div class="ltr"><div class="index-module--markdown--2MdcR ureact-markdown "><p>In the following zkSNARKs example(s) we shall use the ZoKrates framework.</p>
+<p>This is a 5 step process:</p>
+<ol>
+<li>Compile Program</li>
+<li>Trusted Setup</li>
+<li>Compute-Witness</li>
+<li>Generate-Proof</li>
+<li>Export-Verifier</li>
+</ol>
+<h2 id="input-file-s-">Input file(s)</h2>
+<ul>
+<li>program_name.code</li>
+</ul>
+<h2 id="output-file-s-">Output file(s)</h2>
+<ul>
+<li>out.code</li>
+<li>out</li>
+<li>proving.key</li>
+<li>verification.key</li>
+<li>variables.inf</li>
+<li>witness</li>
+<li>proof.json</li>
+<li>verifier.sol</li>
+</ul>
+</div></div><span></span></div></div></div><div><div class="index--container--2OwOl"><div class="index--atom--lmAIo layout--content--3Smmq"><div><a href="https://classroom.udacity.com/nanodegrees/nd1309/parts/36b45ada-c0e5-495e-b6cc-34ea14a18d61/modules/43d200d0-9ce6-4e20-b1c0-39a4e00ac275/lessons/d35b025b-01b3-4bd9-acf5-e8bb5b88f00c/concepts/a431480a-c27c-437d-a911-8d442d2c8624#" class="image-atom--image-atom--1XDdu"><div class="index--image-atom-content--YoZVu"><div class="index--image-and-annotations-container--1o6QP"><img src="./Capstone 3_files/zokrates-architecture.png" alt="" width="800px" class="index--image--1wh9w"></div></div></a></div><span></span></div></div></div><div><div class="index--container--2OwOl"><div class="index--atom--lmAIo layout--content--3Smmq"><div class="ltr"><div class="index-module--markdown--2MdcR ureact-markdown "><h3 id="step-4-compile-the-program-written-in-zokrates-dsl">Step 4: Compile the program written in ZoKrates DSL</h3>
+<p><code>/path/to/zokrates compile -i &lt;program_name&gt;.code</code></p>
+<h3 id="step-5-generate-the-trusted-setup">Step 5: Generate the Trusted Setup</h3>
+<p>Now take the 'flattened' code, which is a circuit and go through a 'trusted setup'
+Repeat this process, every-time the program.code changes
+Two keys are generated - 'proving.key' and 'verification.key'</p>
+<p><code>/path/to/zokrates setup</code></p>
+<h3 id="step-6-compute-witness">Step 6: Compute Witness</h3>
+<p>Having gone through the 'trusted setup' let's compute our 'witness' who knows the answer
+and it generates a witness file with computation steps</p>
+<p><code>/path/to/zokrates compute-witness -a &lt;a&gt; &lt;b&gt; ... &lt;n&gt;</code></p>
+<h3 id="step-7-generate-proof">Step 7: Generate Proof</h3>
+<p>Next step is to 'generate our proof' based on the above 'witness'
+A <code>proof.json</code> file is generated in this step</p>
+<p><code>/path/to/zokrates generate-proof</code></p>
+<h3 id="step-8-export-verifier">Step 8: Export Verifier</h3>
+<p>Last but never the least, let's generate our 'verifier' smart contract</p>
+<p><code>path/to/zokrates export-verifier</code></p>
+</div></div><span></span></div></div></div><div><div class="index--container--2OwOl"><div class="index--atom--lmAIo layout--content--3Smmq"><div class="ltr"><div class="index-module--markdown--2MdcR ureact-markdown "><h2 id="commands-for-project-square-code">Commands for project: <strong>square.code</strong></h2>
+<p>The boiler plate code for <code>square.code</code> is provided to help your accelerated learning, you will need to fill out the missing variables before continuing on.  Below is a walkthrough of examples so you are able to compare to the outputs to make sure everything is working.</p>
+<p>Go through the steps by executing the following commands</p>
+<p><code>docker run -v /path/to/zokrates/zokrates/code:/home/zokrates/code -ti zokrates/zokrates /bin/bash</code></p>
+<pre><code>zokrates<span class="hljs-variable">@ec46fd6b5c34</span><span class="hljs-symbol">:~</span>$
+</code></pre><p><code>cd code/square</code></p>
+<pre><code>zokrates<span class="hljs-variable">@ec46fd6b5c34</span><span class="hljs-symbol">:~/code/square</span>$
+</code></pre><p><code>~/zokrates compile -i square.code</code></p>
+<pre><code>Compiling square.code
+Compiled program:
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">(private _2,_3)</span>:</span>
+        _4 = (_2 * _2)
+        _5 = (_4 - _3)
+        <span class="hljs-comment"># _6, _7 = Rust::ConditionEq(_5)</span>
+        _6 == (_5 * _7)
+        _8 = (<span class="hljs-number">1</span> - _6)
+        <span class="hljs-number">0</span> == (_8 * _5)
+        <span class="hljs-comment"># _9 = Rust::Identity(_8)</span>
+        _10 = (<span class="hljs-number">1</span> - _9)
+        _11 = (_9 * <span class="hljs-number">1</span>)
+        _12 = (_10 * <span class="hljs-number">0</span>)
+        _13 = (_11 + _12)
+        <span class="hljs-keyword">return</span> _13
+Compiled code written to <span class="hljs-string">'out'</span>
+Human readable code to <span class="hljs-string">'out.code'</span>
+Number of constraints: <span class="hljs-number">12</span>
+</code></pre><p><code>~/zokrates setup</code></p>
+<pre><code>Performing setup...
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">(private _2,_3)</span>:</span>
+        _4 = (_2 * _2)
+        _5 = (_4 - _3)
+        <span class="hljs-comment"># _6, _7 = Rust::ConditionEq(_5)</span>
+        _6 == (_5 * _7)
+        _8 = (<span class="hljs-number">1</span> - _6)
+        <span class="hljs-number">0</span> == (_8 * _5)
+        <span class="hljs-comment"># _9 = Rust::Identity(_8)</span>
+        _10 = (<span class="hljs-number">1</span> - _9)
+        _11 = (_9 * <span class="hljs-number">1</span>)
+        _12 = (_10 * <span class="hljs-number">0</span>)
+        _13 = (_11 + _12)
+        <span class="hljs-keyword">return</span> _13
+num variables: <span class="hljs-number">14</span>
+num constraints: <span class="hljs-number">10</span>
+num inputs: <span class="hljs-number">2</span>
+Swap <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> beneficial, <span class="hljs-keyword">not</span> performing
+* QAP number of variables: <span class="hljs-number">13</span>
+* QAP pre degree: <span class="hljs-number">10</span>
+* QAP degree: <span class="hljs-number">16</span>
+* QAP number of input variables: <span class="hljs-number">2</span>
+* G1 window: <span class="hljs-number">5</span>
+* G2 window: <span class="hljs-number">1</span>
+* G1 elements <span class="hljs-keyword">in</span> PK: <span class="hljs-number">109</span>
+* Non-zero G1 elements <span class="hljs-keyword">in</span> PK: <span class="hljs-number">83</span>
+* G2 elements <span class="hljs-keyword">in</span> PK: <span class="hljs-number">15</span>
+* Non-zero G2 elements <span class="hljs-keyword">in</span> PK: <span class="hljs-number">5</span>
+* PK size <span class="hljs-keyword">in</span> bits: <span class="hljs-number">25438</span>
+* G1 elements <span class="hljs-keyword">in</span> VK: <span class="hljs-number">4</span>
+* G2 elements <span class="hljs-keyword">in</span> VK: <span class="hljs-number">5</span>
+* VK size <span class="hljs-keyword">in</span> bits: <span class="hljs-number">3948</span>
+        Verification key <span class="hljs-keyword">in</span> Solidity compliant format:{
+                vk.A = Pairing.G2Point([<span class="hljs-number">0x1b10d49529b9fdb453db13c92e84ab5dc45334453042191e478b4af992319a14</span>, <span class="hljs-number">0x46eb90b54936dd919ec0bc78841dab711a4f79b8f362d1bf5be1f20f707a8b2</span>], [<span class="hljs-number">0xe49b9c594d9e62f24a2a297054816ea2c91df4fb3e38640e66de63cfd817e8d</span>, <span class="hljs-number">0x9dcd6d2181b6036cc0e6e7f7a6b4fbbd687df1d389456c4e8f867e4cb88fbbd</span>]);
+                vk.B = Pairing.G1Point(<span class="hljs-number">0xe6def06b94364c38e5b7984ccdb60023c48b5bd8e991c05997fe9333b04158f</span>, <span class="hljs-number">0xcc9860476d5fc85ab2ec2b409cc2210a76929845f73205f957880bb3b16ecd8</span>);
+                vk.C = Pairing.G2Point([<span class="hljs-number">0x10e32a50bc3260c7febf42975de3650fe4a7139bd0257d21733a9ced3ff390c1</span>, <span class="hljs-number">0x1bd239069e98b09e76e6c132b38d013f6ec8915b7da57db6b455fc290bf471bb</span>], [<span class="hljs-number">0x27591b27d811d8c2b62d03c179f91dbb7f2d24bb17add3d63b994b7f89514150</span>, <span class="hljs-number">0x2a9ec752977ffc91e31cd27f9cbbb3ad911e262eb5f8c7ede68d6ebc3a92f8a5</span>]);
+                vk.gamma = Pairing.G2Point([<span class="hljs-number">0x1f0c6a2f09a9670bf6c7d972e95c6e5a930142cefeea38e4a87f24921ac2592d</span>, <span class="hljs-number">0x4f331535b42f312a87d12b1047ba5a988731ff64c66b06b60430481882d0d88</span>], [<span class="hljs-number">0x1f43a3146ad6acfc9dac398a7f4e371dc04083b276a1d0f4d3328d9593d9aa99</span>, <span class="hljs-number">0x2a8b26dad1546f3e2e0608e7404d4c3e2a62dda46e9ef60b87f4da1737c306ad</span>]);
+                vk.gammaBeta1 = Pairing.G1Point(<span class="hljs-number">0x37b0008f481e55f95dba689e98d4aaa6b71ae388a3894c7c29ce70e0d9a68f1</span>, <span class="hljs-number">0x28581ffa3f9e9ccc7e326e28fb631f66a99b3765de414d0dcc14744e503288c5</span>);
+                vk.gammaBeta2 = Pairing.G2Point([<span class="hljs-number">0x2a3576b33a12081980916faf04f10da2303dbc02997243ac504310a4280a6a82</span>, <span class="hljs-number">0x41037b2c7f4e47443ae93edfcf3f0567f6efab375490fc623fcb43ddd43fc8</span>], [<span class="hljs-number">0x2fda20f1bf8bb0582dc6d86ab5e54e642dcbc84a6c2dd8946d2e9a264e85218b</span>, <span class="hljs-number">0x17c4835f6f0187700e3db9011de120096b6a2cc70ccad3f4316b46a36f665cc3</span>]);
+                vk.Z = Pairing.G2Point([<span class="hljs-number">0x2c24ab08b2553394d1bf14eea008cf048cfd04a76985520f7298cf3193a83b94</span>, <span class="hljs-number">0x2a78e1cead84d701d260b4501bc10f8484a4634af0804f7618f5d4d5810264c0</span>], [<span class="hljs-number">0x9bc0f8c060d83b583f26c6246e73542ed2508f540bd1d8a6fd76c613b7539ac</span>, <span class="hljs-number">0x13d754c72b2bd74366f90e0820de110b131d7cb4938ca7bd32fbdd7692d72f8f</span>]);
+                vk.IC = new Pairing.G1Point[](<span class="hljs-number">3</span>);
+                vk.IC[<span class="hljs-number">0</span>] = Pairing.G1Point(<span class="hljs-number">0x22b868e2f6fb09d53ecd062cea60d26b1ab399850dbc6884d27d2635819508a2</span>, <span class="hljs-number">0x282098aeb5ff8fda56c6c706b16a8ff48c0252baf2e5eba3dcd1244f0dd35ed7</span>);
+                vk.IC[<span class="hljs-number">1</span>] = Pairing.G1Point(<span class="hljs-number">0x121a1b6b5d1b609797437a11887c852395552ca480d0628a820b0b497ffd7bb8</span>, <span class="hljs-number">0x2f21165ef531364662970aedf0709ca52dacbc993e6e4f8e1e9dd55372ea6a78</span>);
+                vk.IC[<span class="hljs-number">2</span>] = Pairing.G1Point(<span class="hljs-number">0xf10b3c22875fbe19c4fe8566ef1c69c4ba33cd6080a6caa8a5839a8ad0378c5</span>, <span class="hljs-number">0xebde646e2e341e1179d2d0f6a8810592f2dd41b99c0a586a014ca9b12fb5fdd</span>);
+                }
+setup successful: true
+</code></pre><p><code>~/zokrates compute-witness -a 3 9</code></p>
+<pre><code>Computing witness <span class="hljs-keyword">for</span>:
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span><span class="hljs-params">(private _2,_3)</span>:</span>
+        _4 = (_2 * _2)
+        _5 = (_4 - _3)
+        <span class="hljs-comment"># _6, _7 = Rust::ConditionEq(_5)</span>
+        _6 == (_5 * _7)
+        _8 = (<span class="hljs-number">1</span> - _6)
+        <span class="hljs-number">0</span> == (_8 * _5)
+        <span class="hljs-comment"># _9 = Rust::Identity(_8)</span>
+        _10 = (<span class="hljs-number">1</span> - _9)
+        _11 = (_9 * <span class="hljs-number">1</span>)
+        _12 = (_10 * <span class="hljs-number">0</span>)
+        _13 = (_11 + _12)
+        <span class="hljs-keyword">return</span> _13
+
+Witness:
+
+~out_0 <span class="hljs-number">1</span>
+</code></pre><p><code>~/zokrates generate-proof</code></p>
+<pre><code>Generating proof...
+Using Witness: {<span class="hljs-string">"_8"</span>: <span class="hljs-number">1</span>, <span class="hljs-string">"~one"</span>: <span class="hljs-number">1</span>, <span class="hljs-string">"_2"</span>: <span class="hljs-number">3</span>, <span class="hljs-string">"_7"</span>: <span class="hljs-number">1</span>, <span class="hljs-string">"_13"</span>: <span class="hljs-number">1</span>, <span class="hljs-string">"_3"</span>: <span class="hljs-number">9</span>, <span class="hljs-string">"_9"</span>: <span class="hljs-number">1</span>, <span class="hljs-string">"_6"</span>: <span class="hljs-number">0</span>, <span class="hljs-string">"~out_0"</span>: <span class="hljs-number">1</span>, <span class="hljs-string">"_10"</span>: <span class="hljs-number">0</span>, <span class="hljs-string">"_11"</span>: <span class="hljs-number">1</span>, <span class="hljs-string">"_12"</span>: <span class="hljs-number">0</span>, <span class="hljs-string">"_5"</span>: <span class="hljs-number">0</span>, <span class="hljs-string">"_4"</span>: <span class="hljs-number">9</span>}
+Public inputs: [<span class="hljs-number">1</span>, <span class="hljs-number">9</span>, <span class="hljs-number">1</span>]
+Private inputs: [<span class="hljs-number">3</span>, <span class="hljs-number">9</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1</span>]
+* Elements of w skipped: <span class="hljs-number">3</span> (<span class="hljs-number">33.33</span>%)
+* Elements of w processed with special addition: <span class="hljs-number">4</span> (<span class="hljs-number">44.44</span>%)
+* Elements of w remaining: <span class="hljs-number">2</span> (<span class="hljs-number">22.22</span>%)
+* Elements of w skipped: <span class="hljs-number">1</span> (<span class="hljs-number">33.33</span>%)
+* Elements of w processed with special addition: <span class="hljs-number">1</span> (<span class="hljs-number">33.33</span>%)
+* Elements of w remaining: <span class="hljs-number">1</span> (<span class="hljs-number">33.33</span>%)
+* Elements of w skipped: <span class="hljs-number">4</span> (<span class="hljs-number">36.36</span>%)
+* Elements of w processed with special addition: <span class="hljs-number">5</span> (<span class="hljs-number">45.45</span>%)
+* Elements of w remaining: <span class="hljs-number">2</span> (<span class="hljs-number">18.18</span>%)
+* Elements of w skipped: <span class="hljs-number">4</span> (<span class="hljs-number">30.77</span>%)
+* Elements of w processed with special addition: <span class="hljs-number">6</span> (<span class="hljs-number">46.15</span>%)
+* Elements of w remaining: <span class="hljs-number">3</span> (<span class="hljs-number">23.08</span>%)
+* G1 elements in proof: <span class="hljs-number">7</span>
+* G2 elements in proof: <span class="hljs-number">1</span>
+* Proof size in bits: <span class="hljs-number">2294</span>
+Proof:
+A = Pairing.G1Point(<span class="hljs-number">0x10011bb0ae2830e7aac3a8018a35cb5bcf7e9b7e1f1f978659617bb8963dc9eb</span>, <span class="hljs-number">0x1e1bfa48eea252e9af7a640692efd7a9621196f199449297eb15f0de55f48e2</span>);
+A_p = Pairing.G1Point(<span class="hljs-number">0x208b8d0290c0aae78f7a68e4eeb279d5acef98440f6362f89be509dfb30cac7b</span>, <span class="hljs-number">0x13483c8e6250415dc769d1df23ebd0685e706dc9ccb8a6531656ac752d1c38be</span>);
+B = Pairing.G2Point([<span class="hljs-number">0xdbbdb9a1b3840a906e4e8c45262331c4b6ef4331f72a5febcb2b9bb0ae0ad93</span>, <span class="hljs-number">0x1f8f59715f8bed2d88f7424a185d126caada6510ee9c58931fbf8ce41e0226e4</span>], [<span class="hljs-number">0x26050966f8c53a0ede7802029b7480445299a60c6668398c2710c94130513927</span>, <span class="hljs-number">0x15357ed970d284c59adf8ea5e2cec0afc3ca037ab88b7d77538f73b87e652307</span>]);
+B_p = Pairing.G1Point(<span class="hljs-number">0x2e3a1b6396d4ba1e4b8534770686f936f6fd7263a482e6ea21d7a71f6fc1b38a</span>, <span class="hljs-number">0x291bc498d964af16a6c0a43faf69370d901d59045eaf9e9480f630c2796e44b1</span>);
+C = Pairing.G1Point(<span class="hljs-number">0x345efb9b94c2e35ddb250ae37d7b9d9bca1ca25ed015f2866291ef5b56bceed</span>, <span class="hljs-number">0xcf8e6bc23944b5c8877dfcd4d19dc131dc41f366ed95b3d7d654642f02a60cb</span>);
+C_p = Pairing.G1Point(<span class="hljs-number">0xcf6854e67af66797ea0b4f199b17dd2297a46c772d554a61b47a05ec0c7eaf0</span>, <span class="hljs-number">0x2824aec96561b59ec9dafe69b84873a7b2976d809187f8a2db1875ac794b0e3e</span>);
+H = Pairing.G1Point(<span class="hljs-number">0x21e5e352a944783143e0bae49067d07e447e091fdaaa1e5b8db52204762b5932</span>, <span class="hljs-number">0x24daf7d76d6cda133ea472e8ffe212b4dd28b1f30927d979eefb3b743488e441</span>);
+K = Pairing.G1Point(<span class="hljs-number">0x14c4c91906fdabe4bc5fc90fd94f4d2828de747f910beac74c7362245f515595</span>, <span class="hljs-number">0x17792bd44e9fa943517b6586c452734e438bf3e0e5c09e89054e540cec76e0e8</span>);
+generate-proof successful: <span class="hljs-literal">true</span>
+</code></pre><p><code>~/zokrates export-verifier</code></p>
+<pre><code><span class="hljs-variable">Exporting</span> verifier...
+<span class="hljs-variable">Finished</span> exporting verifier.
+</code></pre><h3 id="verifier-sol">verifier.sol</h3>
+<pre><code><span class="hljs-comment">// This file is MIT Licensed.</span>
+<span class="hljs-comment">//</span>
+<span class="hljs-comment">// Copyright 2017 Christian Reitwiessner</span>
+<span class="hljs-comment">// Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</span>
+<span class="hljs-comment">// The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</span>
+<span class="hljs-comment">// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span>
+
+pragma solidity ^<span class="hljs-number">0.4</span><span class="hljs-number">.14</span>;
+library Pairing {
+    <span class="hljs-keyword">struct</span> G1Point {
+        uint X;
+        uint Y;
+    }
+    <span class="hljs-comment">// Encoding of field elements is: X[0] * z + X[1]</span>
+    <span class="hljs-keyword">struct</span> G2Point {
+        uint[<span class="hljs-number">2</span>] X;
+        uint[<span class="hljs-number">2</span>] Y;
+    }
+    <span class="hljs-comment">/// @return the generator of G1</span>
+    <span class="hljs-function">function <span class="hljs-title">P1</span><span class="hljs-params">()</span> pure internal <span class="hljs-title">returns</span> <span class="hljs-params">(G1Point)</span> </span>{
+        <span class="hljs-keyword">return</span> G1Point(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);
+    }
+    <span class="hljs-comment">/// @return the generator of G2</span>
+    <span class="hljs-function">function <span class="hljs-title">P2</span><span class="hljs-params">()</span> pure internal <span class="hljs-title">returns</span> <span class="hljs-params">(G2Point)</span> </span>{
+        <span class="hljs-keyword">return</span> G2Point(
+            [<span class="hljs-number">11559732032986387107991004021392285783925812861821192530917403151452391805634</span>,
+             <span class="hljs-number">10857046999023057135944570762232829481370756359578518086990519993285655852781</span>],
+            [<span class="hljs-number">4082367875863433681332203403145435568316851327593401208105741076214120093531</span>,
+             <span class="hljs-number">8495653923123431417604973247489272438418190587263600148770280649306958101930</span>]
+        );
+    }
+    <span class="hljs-comment">/// @return the negation of p, i.e. p.addition(p.negate()) should be zero.</span>
+    <span class="hljs-function">function <span class="hljs-title">negate</span><span class="hljs-params">(G1Point p)</span> pure internal <span class="hljs-title">returns</span> <span class="hljs-params">(G1Point)</span> </span>{
+        <span class="hljs-comment">// The prime q in the base field F_q for G1</span>
+        uint q = <span class="hljs-number">21888242871839275222246405745257275088696311157297823662689037894645226208583</span>;
+        <span class="hljs-keyword">if</span> (p.X == <span class="hljs-number">0</span> &amp;&amp; p.Y == <span class="hljs-number">0</span>)
+            <span class="hljs-keyword">return</span> G1Point(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+        <span class="hljs-keyword">return</span> G1Point(p.X, q - (p.Y % q));
+    }
+    <span class="hljs-comment">/// @return the sum of two points of G1</span>
+    <span class="hljs-function">function <span class="hljs-title">addition</span><span class="hljs-params">(G1Point p1, G1Point p2)</span> internal <span class="hljs-title">returns</span> <span class="hljs-params">(G1Point r)</span> </span>{
+        uint[<span class="hljs-number">4</span>] memory input;
+        input[<span class="hljs-number">0</span>] = p1.X;
+        input[<span class="hljs-number">1</span>] = p1.Y;
+        input[<span class="hljs-number">2</span>] = p2.X;
+        input[<span class="hljs-number">3</span>] = p2.Y;
+        <span class="hljs-keyword">bool</span> success;
+        assembly {
+            success := call(sub(gas, <span class="hljs-number">2000</span>), <span class="hljs-number">6</span>, <span class="hljs-number">0</span>, input, <span class="hljs-number">0xc0</span>, r, <span class="hljs-number">0x60</span>)
+            <span class="hljs-comment">// Use "invalid" to make gas estimation work</span>
+            <span class="hljs-keyword">switch</span> success <span class="hljs-keyword">case</span> <span class="hljs-number">0</span> { invalid() }
+        }
+        require(success);
+    }
+    <span class="hljs-comment">/// @return the product of a point on G1 and a scalar, i.e.</span>
+    <span class="hljs-comment">/// p == p.scalar_mul(1) and p.addition(p) == p.scalar_mul(2) for all points p.</span>
+    <span class="hljs-function">function <span class="hljs-title">scalar_mul</span><span class="hljs-params">(G1Point p, uint s)</span> internal <span class="hljs-title">returns</span> <span class="hljs-params">(G1Point r)</span> </span>{
+        uint[<span class="hljs-number">3</span>] memory input;
+        input[<span class="hljs-number">0</span>] = p.X;
+        input[<span class="hljs-number">1</span>] = p.Y;
+        input[<span class="hljs-number">2</span>] = s;
+        <span class="hljs-keyword">bool</span> success;
+        assembly {
+            success := call(sub(gas, <span class="hljs-number">2000</span>), <span class="hljs-number">7</span>, <span class="hljs-number">0</span>, input, <span class="hljs-number">0x80</span>, r, <span class="hljs-number">0x60</span>)
+            <span class="hljs-comment">// Use "invalid" to make gas estimation work</span>
+            <span class="hljs-keyword">switch</span> success <span class="hljs-keyword">case</span> <span class="hljs-number">0</span> { invalid() }
+        }
+        require (success);
+    }
+    <span class="hljs-comment">/// @return the result of computing the pairing check</span>
+    <span class="hljs-comment">/// e(p1[0], p2[0]) *  .... * e(p1[n], p2[n]) == 1</span>
+    <span class="hljs-comment">/// For example pairing([P1(), P1().negate()], [P2(), P2()]) should</span>
+    <span class="hljs-comment">/// return true.</span>
+    <span class="hljs-function">function <span class="hljs-title">pairing</span><span class="hljs-params">(G1Point[] p1, G2Point[] p2)</span> internal <span class="hljs-title">returns</span> <span class="hljs-params">(<span class="hljs-keyword">bool</span>)</span> </span>{
+        require(p1.length == p2.length);
+        uint elements = p1.length;
+        uint inputSize = elements * <span class="hljs-number">6</span>;
+        uint[] memory input = <span class="hljs-keyword">new</span> uint[](inputSize);
+        <span class="hljs-keyword">for</span> (uint i = <span class="hljs-number">0</span>; i &lt; elements; i++)
+        {
+            input[i * <span class="hljs-number">6</span> + <span class="hljs-number">0</span>] = p1[i].X;
+            input[i * <span class="hljs-number">6</span> + <span class="hljs-number">1</span>] = p1[i].Y;
+            input[i * <span class="hljs-number">6</span> + <span class="hljs-number">2</span>] = p2[i].X[<span class="hljs-number">0</span>];
+            input[i * <span class="hljs-number">6</span> + <span class="hljs-number">3</span>] = p2[i].X[<span class="hljs-number">1</span>];
+            input[i * <span class="hljs-number">6</span> + <span class="hljs-number">4</span>] = p2[i].Y[<span class="hljs-number">0</span>];
+            input[i * <span class="hljs-number">6</span> + <span class="hljs-number">5</span>] = p2[i].Y[<span class="hljs-number">1</span>];
+        }
+        uint[<span class="hljs-number">1</span>] memory out;
+        <span class="hljs-keyword">bool</span> success;
+        assembly {
+            success := call(sub(gas, <span class="hljs-number">2000</span>), <span class="hljs-number">8</span>, <span class="hljs-number">0</span>, add(input, <span class="hljs-number">0x20</span>), mul(inputSize, <span class="hljs-number">0x20</span>), out, <span class="hljs-number">0x20</span>)
+            <span class="hljs-comment">// Use "invalid" to make gas estimation work</span>
+            <span class="hljs-keyword">switch</span> success <span class="hljs-keyword">case</span> <span class="hljs-number">0</span> { invalid() }
+        }
+        require(success);
+        <span class="hljs-keyword">return</span> out[<span class="hljs-number">0</span>] != <span class="hljs-number">0</span>;
+    }
+    <span class="hljs-comment">/// Convenience method for a pairing check for two pairs.</span>
+    <span class="hljs-function">function <span class="hljs-title">pairingProd2</span><span class="hljs-params">(G1Point a1, G2Point a2, G1Point b1, G2Point b2)</span> internal <span class="hljs-title">returns</span> <span class="hljs-params">(<span class="hljs-keyword">bool</span>)</span> </span>{
+        G1Point[] memory p1 = <span class="hljs-keyword">new</span> G1Point[](<span class="hljs-number">2</span>);
+        G2Point[] memory p2 = <span class="hljs-keyword">new</span> G2Point[](<span class="hljs-number">2</span>);
+        p1[<span class="hljs-number">0</span>] = a1;
+        p1[<span class="hljs-number">1</span>] = b1;
+        p2[<span class="hljs-number">0</span>] = a2;
+        p2[<span class="hljs-number">1</span>] = b2;
+        <span class="hljs-keyword">return</span> pairing(p1, p2);
+    }
+    <span class="hljs-comment">/// Convenience method for a pairing check for three pairs.</span>
+    <span class="hljs-function">function <span class="hljs-title">pairingProd3</span><span class="hljs-params">(
+            G1Point a1, G2Point a2,
+            G1Point b1, G2Point b2,
+            G1Point c1, G2Point c2
+    )</span> internal <span class="hljs-title">returns</span> <span class="hljs-params">(<span class="hljs-keyword">bool</span>)</span> </span>{
+        G1Point[] memory p1 = <span class="hljs-keyword">new</span> G1Point[](<span class="hljs-number">3</span>);
+        G2Point[] memory p2 = <span class="hljs-keyword">new</span> G2Point[](<span class="hljs-number">3</span>);
+        p1[<span class="hljs-number">0</span>] = a1;
+        p1[<span class="hljs-number">1</span>] = b1;
+        p1[<span class="hljs-number">2</span>] = c1;
+        p2[<span class="hljs-number">0</span>] = a2;
+        p2[<span class="hljs-number">1</span>] = b2;
+        p2[<span class="hljs-number">2</span>] = c2;
+        <span class="hljs-keyword">return</span> pairing(p1, p2);
+    }
+    <span class="hljs-comment">/// Convenience method for a pairing check for four pairs.</span>
+    <span class="hljs-function">function <span class="hljs-title">pairingProd4</span><span class="hljs-params">(
+            G1Point a1, G2Point a2,
+            G1Point b1, G2Point b2,
+            G1Point c1, G2Point c2,
+            G1Point d1, G2Point d2
+    )</span> internal <span class="hljs-title">returns</span> <span class="hljs-params">(<span class="hljs-keyword">bool</span>)</span> </span>{
+        G1Point[] memory p1 = <span class="hljs-keyword">new</span> G1Point[](<span class="hljs-number">4</span>);
+        G2Point[] memory p2 = <span class="hljs-keyword">new</span> G2Point[](<span class="hljs-number">4</span>);
+        p1[<span class="hljs-number">0</span>] = a1;
+        p1[<span class="hljs-number">1</span>] = b1;
+        p1[<span class="hljs-number">2</span>] = c1;
+        p1[<span class="hljs-number">3</span>] = d1;
+        p2[<span class="hljs-number">0</span>] = a2;
+        p2[<span class="hljs-number">1</span>] = b2;
+        p2[<span class="hljs-number">2</span>] = c2;
+        p2[<span class="hljs-number">3</span>] = d2;
+        <span class="hljs-keyword">return</span> pairing(p1, p2);
+    }
+}
+contract Verifier {
+    <span class="hljs-keyword">using</span> Pairing <span class="hljs-keyword">for</span> *;
+    <span class="hljs-keyword">struct</span> VerifyingKey {
+        Pairing.G2Point A;
+        Pairing.G1Point B;
+        Pairing.G2Point C;
+        Pairing.G2Point gamma;
+        Pairing.G1Point gammaBeta1;
+        Pairing.G2Point gammaBeta2;
+        Pairing.G2Point Z;
+        Pairing.G1Point[] IC;
+    }
+    <span class="hljs-keyword">struct</span> Proof {
+        Pairing.G1Point A;
+        Pairing.G1Point A_p;
+        Pairing.G2Point B;
+        Pairing.G1Point B_p;
+        Pairing.G1Point C;
+        Pairing.G1Point C_p;
+        Pairing.G1Point K;
+        Pairing.G1Point H;
+    }
+    <span class="hljs-function">function <span class="hljs-title">verifyingKey</span><span class="hljs-params">()</span> pure internal <span class="hljs-title">returns</span> <span class="hljs-params">(VerifyingKey vk)</span> </span>{
+        vk.A = Pairing.G2Point([<span class="hljs-number">0x1b10d49529b9fdb453db13c92e84ab5dc45334453042191e478b4af992319a14</span>, <span class="hljs-number">0x46eb90b54936dd919ec0bc78841dab711a4f79b8f362d1bf5be1f20f707a8b2</span>], [<span class="hljs-number">0xe49b9c594d9e62f24a2a297054816ea2c91df4fb3e38640e66de63cfd817e8d</span>, <span class="hljs-number">0x9dcd6d2181b6036cc0e6e7f7a6b4fbbd687df1d389456c4e8f867e4cb88fbbd</span>]);
+        vk.B = Pairing.G1Point(<span class="hljs-number">0xe6def06b94364c38e5b7984ccdb60023c48b5bd8e991c05997fe9333b04158f</span>, <span class="hljs-number">0xcc9860476d5fc85ab2ec2b409cc2210a76929845f73205f957880bb3b16ecd8</span>);
+        vk.C = Pairing.G2Point([<span class="hljs-number">0x10e32a50bc3260c7febf42975de3650fe4a7139bd0257d21733a9ced3ff390c1</span>, <span class="hljs-number">0x1bd239069e98b09e76e6c132b38d013f6ec8915b7da57db6b455fc290bf471bb</span>], [<span class="hljs-number">0x27591b27d811d8c2b62d03c179f91dbb7f2d24bb17add3d63b994b7f89514150</span>, <span class="hljs-number">0x2a9ec752977ffc91e31cd27f9cbbb3ad911e262eb5f8c7ede68d6ebc3a92f8a5</span>]);
+        vk.gamma = Pairing.G2Point([<span class="hljs-number">0x1f0c6a2f09a9670bf6c7d972e95c6e5a930142cefeea38e4a87f24921ac2592d</span>, <span class="hljs-number">0x4f331535b42f312a87d12b1047ba5a988731ff64c66b06b60430481882d0d88</span>], [<span class="hljs-number">0x1f43a3146ad6acfc9dac398a7f4e371dc04083b276a1d0f4d3328d9593d9aa99</span>, <span class="hljs-number">0x2a8b26dad1546f3e2e0608e7404d4c3e2a62dda46e9ef60b87f4da1737c306ad</span>]);
+        vk.gammaBeta1 = Pairing.G1Point(<span class="hljs-number">0x37b0008f481e55f95dba689e98d4aaa6b71ae388a3894c7c29ce70e0d9a68f1</span>, <span class="hljs-number">0x28581ffa3f9e9ccc7e326e28fb631f66a99b3765de414d0dcc14744e503288c5</span>);
+        vk.gammaBeta2 = Pairing.G2Point([<span class="hljs-number">0x2a3576b33a12081980916faf04f10da2303dbc02997243ac504310a4280a6a82</span>, <span class="hljs-number">0x41037b2c7f4e47443ae93edfcf3f0567f6efab375490fc623fcb43ddd43fc8</span>], [<span class="hljs-number">0x2fda20f1bf8bb0582dc6d86ab5e54e642dcbc84a6c2dd8946d2e9a264e85218b</span>, <span class="hljs-number">0x17c4835f6f0187700e3db9011de120096b6a2cc70ccad3f4316b46a36f665cc3</span>]);
+        vk.Z = Pairing.G2Point([<span class="hljs-number">0x2c24ab08b2553394d1bf14eea008cf048cfd04a76985520f7298cf3193a83b94</span>, <span class="hljs-number">0x2a78e1cead84d701d260b4501bc10f8484a4634af0804f7618f5d4d5810264c0</span>], [<span class="hljs-number">0x9bc0f8c060d83b583f26c6246e73542ed2508f540bd1d8a6fd76c613b7539ac</span>, <span class="hljs-number">0x13d754c72b2bd74366f90e0820de110b131d7cb4938ca7bd32fbdd7692d72f8f</span>]);
+        vk.IC = <span class="hljs-keyword">new</span> Pairing.G1Point[](<span class="hljs-number">3</span>);
+        vk.IC[<span class="hljs-number">0</span>] = Pairing.G1Point(<span class="hljs-number">0x22b868e2f6fb09d53ecd062cea60d26b1ab399850dbc6884d27d2635819508a2</span>, <span class="hljs-number">0x282098aeb5ff8fda56c6c706b16a8ff48c0252baf2e5eba3dcd1244f0dd35ed7</span>);
+        vk.IC[<span class="hljs-number">1</span>] = Pairing.G1Point(<span class="hljs-number">0x121a1b6b5d1b609797437a11887c852395552ca480d0628a820b0b497ffd7bb8</span>, <span class="hljs-number">0x2f21165ef531364662970aedf0709ca52dacbc993e6e4f8e1e9dd55372ea6a78</span>);
+        vk.IC[<span class="hljs-number">2</span>] = Pairing.G1Point(<span class="hljs-number">0xf10b3c22875fbe19c4fe8566ef1c69c4ba33cd6080a6caa8a5839a8ad0378c5</span>, <span class="hljs-number">0xebde646e2e341e1179d2d0f6a8810592f2dd41b99c0a586a014ca9b12fb5fdd</span>);
+    }
+    <span class="hljs-function">function <span class="hljs-title">verify</span><span class="hljs-params">(uint[] input, Proof proof)</span> internal <span class="hljs-title">returns</span> <span class="hljs-params">(uint)</span> </span>{
+        VerifyingKey memory vk = verifyingKey();
+        require(input.length + <span class="hljs-number">1</span> == vk.IC.length);
+        <span class="hljs-comment">// Compute the linear combination vk_x</span>
+        Pairing.G1Point memory vk_x = Pairing.G1Point(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>);
+        <span class="hljs-keyword">for</span> (uint i = <span class="hljs-number">0</span>; i &lt; input.length; i++)
+            vk_x = Pairing.addition(vk_x, Pairing.scalar_mul(vk.IC[i + <span class="hljs-number">1</span>], input[i]));
+        vk_x = Pairing.addition(vk_x, vk.IC[<span class="hljs-number">0</span>]);
+        <span class="hljs-keyword">if</span> (!Pairing.pairingProd2(proof.A, vk.A, Pairing.negate(proof.A_p), Pairing.P2())) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">if</span> (!Pairing.pairingProd2(vk.B, proof.B, Pairing.negate(proof.B_p), Pairing.P2())) <span class="hljs-keyword">return</span> <span class="hljs-number">2</span>;
+        <span class="hljs-keyword">if</span> (!Pairing.pairingProd2(proof.C, vk.C, Pairing.negate(proof.C_p), Pairing.P2())) <span class="hljs-keyword">return</span> <span class="hljs-number">3</span>;
+        <span class="hljs-keyword">if</span> (!Pairing.pairingProd3(
+            proof.K, vk.gamma,
+            Pairing.negate(Pairing.addition(vk_x, Pairing.addition(proof.A, proof.C))), vk.gammaBeta2,
+            Pairing.negate(vk.gammaBeta1), proof.B
+        )) <span class="hljs-keyword">return</span> <span class="hljs-number">4</span>;
+        <span class="hljs-keyword">if</span> (!Pairing.pairingProd3(
+                Pairing.addition(vk_x, proof.A), proof.B,
+                Pairing.negate(proof.H), vk.Z,
+                Pairing.negate(proof.C), Pairing.P2()
+        )) <span class="hljs-keyword">return</span> <span class="hljs-number">5</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+    }
+    <span class="hljs-function">event <span class="hljs-title">Verified</span><span class="hljs-params">(<span class="hljs-built_in">string</span> s)</span></span>;
+    <span class="hljs-function">function <span class="hljs-title">verifyTx</span><span class="hljs-params">(
+            uint[<span class="hljs-number">2</span>] a,
+            uint[<span class="hljs-number">2</span>] a_p,
+            uint[<span class="hljs-number">2</span>][<span class="hljs-number">2</span>] b,
+            uint[<span class="hljs-number">2</span>] b_p,
+            uint[<span class="hljs-number">2</span>] c,
+            uint[<span class="hljs-number">2</span>] c_p,
+            uint[<span class="hljs-number">2</span>] h,
+            uint[<span class="hljs-number">2</span>] k,
+            uint[<span class="hljs-number">2</span>] input
+        )</span> <span class="hljs-keyword">public</span> <span class="hljs-title">returns</span> <span class="hljs-params">(<span class="hljs-keyword">bool</span> r)</span> </span>{
+        Proof memory proof;
+        proof.A = Pairing.G1Point(a[<span class="hljs-number">0</span>], a[<span class="hljs-number">1</span>]);
+        proof.A_p = Pairing.G1Point(a_p[<span class="hljs-number">0</span>], a_p[<span class="hljs-number">1</span>]);
+        proof.B = Pairing.G2Point([b[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>], b[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>]], [b[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>], b[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]]);
+        proof.B_p = Pairing.G1Point(b_p[<span class="hljs-number">0</span>], b_p[<span class="hljs-number">1</span>]);
+        proof.C = Pairing.G1Point(c[<span class="hljs-number">0</span>], c[<span class="hljs-number">1</span>]);
+        proof.C_p = Pairing.G1Point(c_p[<span class="hljs-number">0</span>], c_p[<span class="hljs-number">1</span>]);
+        proof.H = Pairing.G1Point(h[<span class="hljs-number">0</span>], h[<span class="hljs-number">1</span>]);
+        proof.K = Pairing.G1Point(k[<span class="hljs-number">0</span>], k[<span class="hljs-number">1</span>]);
+        uint[] memory inputValues = <span class="hljs-keyword">new</span> uint[](input.length);
+        <span class="hljs-keyword">for</span>(uint i = <span class="hljs-number">0</span>; i &lt; input.length; i++){
+            inputValues[i] = input[i];
+        }
+        <span class="hljs-keyword">if</span> (verify(inputValues, proof) == <span class="hljs-number">0</span>) {
+            <span class="hljs-function">emit <span class="hljs-title">Verified</span><span class="hljs-params">(<span class="hljs-string">"Transaction successfully verified."</span>)</span></span>;
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+        }
+    }
+}
+</code></pre></div></div><span></span></div></div></div><div><div class="index--container--2OwOl"><div class="index--atom--lmAIo layout--content--3Smmq"><div class="ltr"><div class="index-module--markdown--2MdcR ureact-markdown "><h1 id="resources">Resources</h1>
+<p><a target="_blank" href="https://github.com/Zokrates/ZoKrates">Official ZoKrates</a></p>
+</div></div><span></span></div></div></div></div><div><div class="_main--footer-container--3vC-_"><button class="vds-button vds-button--secondary" aria-busy="false" type="button"><span class="vds-button__content">Next</span></button></div></div><noscript></noscript><noscript></noscript></div></div></div></main></div></div></div></div></div></div></div><script src="./Capstone 3_files/vendors_app.7101c.js.download"></script><script src="./Capstone 3_files/app.0849f.js.download"></script><iframe id="intercom-frame" style="position: absolute !important; opacity: 0 !important; width: 1px !important; height: 1px !important; top: 0 !important; left: 0 !important; border: none !important; display: block !important; z-index: -1 !important;" aria-hidden="true" tabindex="-1" src="./Capstone 3_files/saved_resource.html"></iframe><div id="intercom-css-container"><style data-emotion="intercom-global"></style></div><div id="intercom-container" class="intercom-namespace"><style>html.intercom-mobile-messenger-active,html.intercom-mobile-messenger-active > body,html.intercom-modal-open,#intercom-container-body{overflow:hidden !important;}html.intercom-mobile-messenger-active,html.intercom-mobile-messenger-active > body{position:static !important;}html.intercom-mobile-messenger-active > body{height:0 !important;margin:0 !important;}iframe#intercom-frame{position:absolute !important;opacity:0 !important;width:1px !important;height:1px !important;top:0 !important;left:0 !important;border:none !important;display:block !important;z-index:-1 !important;}</style><div class="intercom-app" aria-live="polite"><div id="intercom-modal-container"></div></div></div><div class="ReactModalPortal"></div></body></html>
